@@ -60,6 +60,20 @@ def get_number_of_games_in_season():
     games_in_season = len(home_fouls)
     get_average_fouls_per_game(games_in_season)
 
+def get_total_fouls_per_game_in_season():
+    """
+    This function calculates the total fouls per game over the course of the season
+    """    
+    total_fouls_per_game_in_season = []
+    for home,away in zip(home_fouls, away_fouls):
+        fouls = home + away
+        total_fouls_per_game_in_season.append(fouls)
+    get_median_fouls_per_game(total_fouls_per_game_in_season)
+    get_mode_fouls_per_game(total_fouls_per_game_in_season)
+    max_fouls = get_maximum_fouls_in_a_game(total_fouls_per_game_in_season)
+    min_fouls = get_minimum_fouls_in_a_game(total_fouls_per_game_in_season)
+    get_range_of_fouls(max_fouls, min_fouls)
+
 
 def get_average_fouls_per_game(total_games):
     """
@@ -79,28 +93,74 @@ def get_average_fouls_per_game(total_games):
     
     print(f"The average number of fouls per game for the 2021/22 season was {total_fouls_rounded} fouls")
 
-def get_median_fouls_per_game():
-    total_fouls_per_game_in_season = []
-    for home,away in zip(home_fouls, away_fouls):
-        fouls = home + away
-        total_fouls_per_game_in_season.append(fouls)
-    sorted_list_fouls_per_game = sorted(total_fouls_per_game_in_season)
+def get_median_fouls_per_game(total_fouls):
+    """
+    This function calculates the median number of fouls per game over the season
+
+    Args:
+        total_fouls (list[int]): A list of integers which show total number of fouls per game over the season.
+    """    
+    sorted_list_fouls_per_game = sorted(total_fouls)
     middle_value = int(len(sorted_list_fouls_per_game) / 2)
     if len(sorted_list_fouls_per_game) % 2 == 1:
         median_value = sorted_list_fouls_per_game[middle_value]
     else:
         median_value = ((sorted_list_fouls_per_game[middle_value - 1] + sorted_list_fouls_per_game[middle_value]) / 2)
-    print(f"Median number of fouls per game over the course of the 21/22 season is: {median_value:.1f}")
+    print(f"The median number of fouls per game over the course of the 21/22 season is: {median_value:.1f}")
 
 
-def get_mode_fouls_per_game():
+def get_mode_fouls_per_game(total_fouls):
+    """
+    This function gets the mode value in the total fouls list.
+
+    Args:
+        total_fouls (list[int]): List of integers representing the total number of fouls per game over the season. will contain 380 values
+    """    
+    unique_values = sorted(set(total_fouls))
+    times_in_list = [total_fouls.count(value) for value in unique_values]
+    max_value = max(times_in_list)
+    index_of_max = times_in_list.index(max_value)
+    mode_value = unique_values[index_of_max]
+    print(f"The mode number of fouls per game over the course of the 21/22 season is: {mode_value}")
+
+
+def get_maximum_fouls_in_a_game(total_fouls):
+    """
+    This function gets the maximum value in the total fouls list.
+
+    Args:
+        total_fouls (list[int]): List of integers representing the total number of fouls per game over the season. will contain 380 values
+    """    
+    max_fouls = max(total_fouls)
+    print(f"The maximum number of fouls in a game over the course of the 21/22 season was: {max_fouls}")
+    return max_fouls
+
+def get_minimum_fouls_in_a_game(total_fouls):
+    """
+    This function gets the minimum value in the total fouls list.
+
+    Args:
+        total_fouls (list[int]): List of integers representing the total number of fouls per game over the season. will contain 380 values
+    """    
+    min_fouls = min(total_fouls)
+    print(f"The minimum number of fouls in a game over the course of the 21/22 season was: {min_fouls}")
+    return min_fouls
+
+def get_range_of_fouls(max_fouls, min_fouls):
+    print(f"The range of fouls in a game over the course of the 21/22 season was: {min_fouls}, {max_fouls}")
+
+def get_interquartile_range_of_fouls(max_fouls, min_fouls):
     pass
 
-def get_maximum_fouls_in_a_game():
+def get_standard_deviation_of_fouls(max_fouls, min_fouls):
     pass
 
-def get_minimum_fouls_in_a_game():
+def get_pearson_mode_skewness_of_fouls(max_fouls, min_fouls):
     pass
+
+def get_correlation_of_fouls(max_fouls, min_fouls):
+    pass
+    
 
 
 # matplotlib stuff
@@ -111,4 +171,4 @@ def get_minimum_fouls_in_a_game():
 if __name__ == "__main__":
     read_data_and_create_lists()
     get_number_of_games_in_season()
-    get_median_fouls_per_game()
+    get_total_fouls_per_game_in_season()
