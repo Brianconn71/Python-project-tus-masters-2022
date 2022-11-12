@@ -73,6 +73,7 @@ def get_total_fouls_per_game_in_season():
     max_fouls = get_maximum_fouls_in_a_game(total_fouls_per_game_in_season)
     min_fouls = get_minimum_fouls_in_a_game(total_fouls_per_game_in_season)
     get_range_of_fouls(max_fouls, min_fouls)
+    get_interquartile_range_of_fouls(total_fouls_per_game_in_season)
 
 
 def get_average_fouls_per_game(total_games):
@@ -92,6 +93,7 @@ def get_average_fouls_per_game(total_games):
     total_fouls_rounded = round(total_fouls_in_season, 2)
     
     print(f"The average number of fouls per game for the 2021/22 season was {total_fouls_rounded} fouls")
+    return total_fouls_rounded
 
 def get_median_fouls_per_game(total_fouls):
     """
@@ -106,7 +108,9 @@ def get_median_fouls_per_game(total_fouls):
         median_value = sorted_list_fouls_per_game[middle_value]
     else:
         median_value = ((sorted_list_fouls_per_game[middle_value - 1] + sorted_list_fouls_per_game[middle_value]) / 2)
+    
     print(f"The median number of fouls per game over the course of the 21/22 season is: {median_value:.1f}")
+    return median_value
 
 
 def get_mode_fouls_per_game(total_fouls):
@@ -122,6 +126,7 @@ def get_mode_fouls_per_game(total_fouls):
     index_of_max = times_in_list.index(max_value)
     mode_value = unique_values[index_of_max]
     print(f"The mode number of fouls per game over the course of the 21/22 season is: {mode_value}")
+    return mode_value
 
 
 def get_maximum_fouls_in_a_game(total_fouls):
@@ -149,14 +154,55 @@ def get_minimum_fouls_in_a_game(total_fouls):
 def get_range_of_fouls(max_fouls, min_fouls):
     print(f"The range of fouls in a game over the course of the 21/22 season was: {min_fouls}, {max_fouls}")
 
-def get_interquartile_range_of_fouls(max_fouls, min_fouls):
-    pass
+def get_interquartile_range_of_fouls(total_games):
+    sorted_list = sorted(total_games)
+    middle_number = int(len(sorted_list) / 2)
+    if len(sorted_list) % 2 == 1:
+        lower_half = sorted_list[:middle_number]
+        upper_half = sorted_list[middle_number + 1:]
+    else:
+        lower_half = sorted_list[:middle_number]
+        upper_half = sorted_list[middle_number:]
+    lower_half_median = get_median_fouls_per_game(lower_half)
+    upper_half_median = get_median_fouls_per_game(upper_half)
+    
+    interquartile_range = upper_half_median - lower_half_median
+    
+    print(f"The interquartile range of fouls in a game over the course of the 21/22 season was: {interquartile_range}")
 
-def get_standard_deviation_of_fouls(max_fouls, min_fouls):
-    pass
+def get_standard_deviation_of_fouls(x,total_games):
+    mean = get_average_fouls_per_game(total_games)
+    total = 0
+    for game in x:
+        new_number = game - mean
+        new_number_squared = new_number ** 2
+        total += new_number_squared
+    divide_by_length = total / (len(x) - 1)
+    standard_dev = divide_by_length ** (1/2)
+    
+    print(f"The standard deviation of fouls in a game over the course of the 21/22 season was: {standard_dev}")
+    return standard_dev
 
-def get_pearson_mode_skewness_of_fouls(max_fouls, min_fouls):
-    pass
+def get_pearson_mode_skewness_of_fouls(total_games, x):
+    mean = get_average_fouls_per_game(total_games)
+    mode = get_mode_fouls_per_game(x)
+    standard_dev = get_standard_deviation_of_fouls(x , total_games)
+    
+    pearson_skew = (mean - mode) / standard_dev
+    
+    print(f"The Pearson Mode Skewness of fouls in a game over the course of the 21/22 season was: {pearson_skew}")
+    return pearson_skew
+
+
+def get_alternative_pearson_mode_skewness_of_fouls(total_games, x):
+    mean = get_average_fouls_per_game(total_games)
+    mode = get_mode_fouls_per_game(x)
+    standard_dev = get_standard_deviation_of_fouls(x, total_games)
+    
+    alternative_pearson_skew = 3 * (mean - mode) / standard_dev
+    
+    print(f"The Alternative Pearson Mode Skewness of fouls in a game over the course of the 21/22 season was: {alternative_pearson_skew}")
+    return alternative_pearson_skew
 
 def get_correlation_of_fouls(max_fouls, min_fouls):
     pass
@@ -172,3 +218,11 @@ if __name__ == "__main__":
     read_data_and_create_lists()
     get_number_of_games_in_season()
     get_total_fouls_per_game_in_season()
+    games_in_season = len(home_fouls)
+    total_fouls_per_game_in_season = []
+    for home,away in zip(home_fouls, away_fouls):
+        fouls = home + away
+        total_fouls_per_game_in_season.append(fouls)
+    get_standard_deviation_of_fouls(total_fouls_per_game_in_season, games_in_season)
+    get_pearson_mode_skewness_of_fouls(games_in_season, total_fouls_per_game_in_season)
+    get_alternative_pearson_mode_skewness_of_fouls(games_in_season, total_fouls_per_game_in_season)
