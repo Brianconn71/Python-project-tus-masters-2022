@@ -180,7 +180,7 @@ def get_standard_deviation_of_fouls(x,total_games):
     divide_by_length = total / (len(x) - 1)
     standard_dev = divide_by_length ** (1/2)
     
-    print(f"The standard deviation of fouls in a game over the course of the 21/22 season was: {standard_dev}")
+    print(f"The standard deviation of fouls in a game over the course of the 21/22 season was: {standard_dev:.2f}")
     return standard_dev
 
 def get_pearson_mode_skewness_of_fouls(total_games, x):
@@ -190,7 +190,7 @@ def get_pearson_mode_skewness_of_fouls(total_games, x):
     
     pearson_skew = (mean - mode) / standard_dev
     
-    print(f"The Pearson Mode Skewness of fouls in a game over the course of the 21/22 season was: {pearson_skew}")
+    print(f"The Pearson Mode Skewness of fouls in a game over the course of the 21/22 season was: {pearson_skew:.2f}")
     return pearson_skew
 
 
@@ -201,11 +201,29 @@ def get_alternative_pearson_mode_skewness_of_fouls(total_games, x):
     
     alternative_pearson_skew = 3 * (mean - mode) / standard_dev
     
-    print(f"The Alternative Pearson Mode Skewness of fouls in a game over the course of the 21/22 season was: {alternative_pearson_skew}")
+    print(f"The Alternative Pearson Mode Skewness of fouls in a game over the course of the 21/22 season was: {alternative_pearson_skew:.2f}")
     return alternative_pearson_skew
 
-def get_correlation_of_fouls(max_fouls, min_fouls):
-    pass
+def get_covariance_between_datasets(home_fouls, away_fouls):
+    home_mean = sum(home_fouls) / len(home_fouls)
+    away_mean = sum(away_fouls) / len(away_fouls)
+    t = []
+    for x, y in zip(home_fouls, away_fouls):
+        t.append((x - home_mean) * (y - away_mean))
+    d = sum(t)
+    co_var = d / (len(home_fouls) - 1)
+    return co_var
+    
+
+def get_correlation_of_fouls(home_fouls, away_fouls):
+    g = get_covariance_between_datasets(home_fouls, away_fouls)
+    bh = home_fouls + away_fouls
+    bhh = len(bh)
+    f = get_standard_deviation_of_fouls(home_fouls, bhh)
+    p = get_standard_deviation_of_fouls(away_fouls, bhh)
+    correlation = g / (f * g)
+    print(f"The correlation between the data is {correlation:.2f}")
+    return correlation
     
 
 
@@ -226,3 +244,4 @@ if __name__ == "__main__":
     get_standard_deviation_of_fouls(total_fouls_per_game_in_season, games_in_season)
     get_pearson_mode_skewness_of_fouls(games_in_season, total_fouls_per_game_in_season)
     get_alternative_pearson_mode_skewness_of_fouls(games_in_season, total_fouls_per_game_in_season)
+    get_correlation_of_fouls(home_fouls, away_fouls)
