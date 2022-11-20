@@ -1,5 +1,6 @@
 import pydoc
 import matplotlib.pyplot as plt
+from visualisations import *
 
 
 # initializing the lists globally for use with entire file.
@@ -245,3 +246,4 @@ if __name__ == "__main__":
     get_pearson_mode_skewness_of_fouls(games_in_season, total_fouls_per_game_in_season)
     get_alternative_pearson_mode_skewness_of_fouls(games_in_season, total_fouls_per_game_in_season)
     get_correlation_of_fouls(home_fouls, away_fouls)
+    histogram_from_data(home_fouls, away_fouls)
