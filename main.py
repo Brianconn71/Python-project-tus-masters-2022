@@ -1,5 +1,6 @@
 import pydoc
 import matplotlib.pyplot as plt
+import unittest
 
 
 # initializing the lists globally for use with entire file.

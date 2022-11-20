@@ -33,12 +33,56 @@ def histogram_from_data(home_fouls, away_fouls):
     # save the figures as a png
     fig.savefig("histograms.png")
 
-def box_plots_from_data():
-    pass
+def box_plots_from_data(home_fouls, away_fouls):
+    # creating figure and axis of objecdts
+    fig, ax = plt.subplots(1,2, figsize=(15,10))
+    
+    #set labels on y axes
+    ax[0].set_ylabel("Number of Home Fouls")
+    
+    # set title
+    ax[0].set_title("Home fouls 21/22")
+    
+    # box plot
+    ax[0].boxplot(home_fouls)
+    
+    #set labels on y axes
+    ax[1].set_ylabel("Number of Away Fouls")
+    
+    # set title
+    ax[1].set_title("away fouls 21/22")
+    
+    # box plot
+    ax[1].boxplot(away_fouls)
+    
+    # display
+    plt.show()
+    
+    #save the fig
+    fig.savefig('boxplots.png', bbox_inches='tight')
 
-def scatter_plot_from_data():
-    pass
+def scatter_plot_from_data(home_fouls, away_fouls):
+    # create figure and axis objects
+    fig, ax = plt.subplots(figsize=(10,8))
+    
+    # setting the labels on axes
+    ax.set_xlabel("Home Fouls")
+    ax.set_ylabel("Away fouls")
+    
+    # set the title
+    ax.set_title("Fouls 21/22")
+    
+    # Do the scatter plot
+    ax.scatter(home_fouls, away_fouls, marker=".")
+    
+    # display the scatter plot
+    plt.show()
+    
+    # save to image
+    fig.savefig('Scatterplot.png', bbox_inches='tight')
 
 if __name__ == "__main__":
     read_data_and_create_lists()
     histogram_from_data(home_fouls, away_fouls)
+    box_plots_from_data(home_fouls, away_fouls)
+    scatter_plot_from_data(home_fouls, away_fouls)
