@@ -75,6 +75,7 @@ def get_total_fouls_per_game_in_season():
     min_fouls = get_minimum_fouls_in_a_game(total_fouls_per_game_in_season)
     get_range_of_fouls(max_fouls, min_fouls)
     get_interquartile_range_of_fouls(total_fouls_per_game_in_season)
+    return total_fouls_per_game_in_season
 
 
 def get_average_fouls_per_game(total_games):
