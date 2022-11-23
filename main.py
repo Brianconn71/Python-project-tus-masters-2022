@@ -25,7 +25,7 @@ def read_data_and_create_lists():
     """
     
     # Open the data in the correct folder
-    with open("/home/briancon71/scripting/Assignment/data/Ref Data.csv", "r") as data_file:
+    with open("/home/bconnolly/Python-project-tus-masters-2022/data/Ref Data.csv", "r") as data_file:
         # remove the headers from the data
         headers = data_file.readline()
         # loop through the lines of data in the file
@@ -225,12 +225,7 @@ def get_correlation_of_fouls(home_fouls, away_fouls):
     correlation = g / (f * g)
     print(f"The correlation between the data is {correlation:.2f}")
     return correlation
-    
 
-
-# matplotlib stuff
-# plt.plot(x,y)
-# plt.show()
 
 
 if __name__ == "__main__":
