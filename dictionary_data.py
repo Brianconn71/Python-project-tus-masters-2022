@@ -12,6 +12,7 @@ def distinct_sub_categories(ref_data, home_fouls, away_fouls):
     for er , nm in zip(ref_data, total):
         referees_data[er] = referees_data.get(er,0) + nm
     print("osf")
+    # test
 
 
 if __name__ == "__main__":
