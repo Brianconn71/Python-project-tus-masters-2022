@@ -31,7 +31,7 @@ def histogram_from_data(home_fouls, away_fouls):
     #show the histograms
     plt.show()
     # save the figures as a png
-    fig.savefig("histograms.png")
+    fig.savefig("charts/histograms.png")
 
 def box_plots_from_data(home_fouls, away_fouls):
     # creating figure and axis of objecdts
@@ -59,7 +59,7 @@ def box_plots_from_data(home_fouls, away_fouls):
     plt.show()
     
     #save the fig
-    fig.savefig('boxplots.png', bbox_inches='tight')
+    fig.savefig('charts/boxplots.png', bbox_inches='tight')
 
 def scatter_plot_from_data(home_fouls, away_fouls):
     # create figure and axis objects
@@ -79,7 +79,7 @@ def scatter_plot_from_data(home_fouls, away_fouls):
     plt.show()
     
     # save to image
-    fig.savefig('Scatterplot.png', bbox_inches='tight')
+    fig.savefig('charts/Scatterplot.png', bbox_inches='tight')
 
 if __name__ == "__main__":
     read_data_and_create_lists()
