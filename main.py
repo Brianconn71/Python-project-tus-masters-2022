@@ -1,4 +1,7 @@
 from calculations import *
+from dictionary_calculations import *
+from visualisations import *
+from dictionary_visualisations import *
 
 def print_statements():
     print(f"The average number of fouls per game for the 2021/22 season was {average_fouls} fouls")
@@ -12,6 +15,11 @@ def print_statements():
     print(f"The Pearson Mode Skewness of fouls in a game over the course of the 21/22 season was: {pearson_mode:.2f}")
     print(f"The Alternative Pearson Mode Skewness of fouls in a game over the course of the 21/22 season was: {alternative_pearson:.2f}")
     print(f"The correlation between the data is {correlation:.2f}")
+    print(f"The distinct number of referees is: {sub_categories}")
+    print(f"The referee who gave the most fouls in the 2021/22 season was: {ref_with_most_fouls}")
+    print(f"The referee who gave the least fouls in the 2021/22 season was: {ref_with_least_fouls}")
+    print(highest_avg_fouls_per_game)
+    print(lowest_avg_fouls_per_game)
 
 
 if __name__ == "__main__":
@@ -30,4 +38,15 @@ if __name__ == "__main__":
     alternative_pearson = get_alternative_pearson_mode_skewness_of_fouls(total_games, total_fouls_per_game)
     co_variance = get_covariance_between_datasets(home_fouls, away_fouls)
     correlation = get_correlation_of_fouls(home_fouls, away_fouls)
+    histogram_from_data(home_fouls, away_fouls)
+    box_plots_from_data(home_fouls, away_fouls)
+    scatter_plot_from_data(home_fouls, away_fouls)
+    referees_count_of_games_data = get_dict_of_refs_and_occurances_in_data(referees)
+    referees_total_fouls_data = get_total_refs_data(referees, total_fouls_per_game)
+    sub_categories = distinct_sub_categories(referees_total_fouls_data)
+    ref_with_most_fouls = ref_with_most_fouls_given(referees_total_fouls_data)
+    ref_with_least_fouls = ref_with_least_fouls_given(referees_total_fouls_data)
+    average_fouls_per_game_dict = dict_from_average_fouls_per_game(referees_total_fouls_data, num_of_games_reffed)
+    highest_avg_fouls_per_game = ref_with_highest_average_of_fouls_given_per_game(average_fouls_per_game_dict)
+    lowest_avg_fouls_per_game = ref_with_lowest_average_of_fouls_given_per_game(average_fouls_per_game_dict)
     print_statements()

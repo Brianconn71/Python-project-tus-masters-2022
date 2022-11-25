@@ -52,7 +52,7 @@ def box_plots(data_dict):
     ax.set_title("Home fouls 21/22")
     
     # box plot
-    ax.boxplot(home_fouls)
+    # ax.boxplot(home_fouls)
     
     #set labels on y axes
     ax.set_ylabel("Number of Away Fouls")
@@ -61,13 +61,10 @@ def box_plots(data_dict):
     ax.set_title("away fouls 21/22")
     
     # box plot
-    ax.boxplot(away_fouls)
+    # ax.boxplot(away_fouls)
     
     # display
     plt.show()
     
     #save the fig
     fig.savefig('charts/boxplots.png', bbox_inches='tight')
-
-if __name__ == "__main__":
-    pass

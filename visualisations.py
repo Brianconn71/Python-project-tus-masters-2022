@@ -1,4 +1,3 @@
-from calculations import *
 import matplotlib.pyplot as plt
 
 def histogram_from_data(home_fouls, away_fouls):
@@ -80,9 +79,3 @@ def scatter_plot_from_data(home_fouls, away_fouls):
     
     # save to image
     fig.savefig('charts/Scatterplot.png', bbox_inches='tight')
-
-if __name__ == "__main__":
-    read_data_and_create_lists()
-    histogram_from_data(home_fouls, away_fouls)
-    box_plots_from_data(home_fouls, away_fouls)
-    scatter_plot_from_data(home_fouls, away_fouls)
