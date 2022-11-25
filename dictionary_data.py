@@ -1,4 +1,4 @@
-from main import *
+from calculations import *
 from dict_visualisations import *
 import pydoc
 

@@ -1,4 +1,4 @@
-from main import *
+from calculations import *
 import matplotlib.pyplot as plt
 
 def histogram_from_data(home_fouls, away_fouls):
