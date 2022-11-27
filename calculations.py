@@ -26,7 +26,7 @@ def read_data_and_create_lists():
     """
     
     # Open the data in the correct folder
-    with open("/home/bconnolly/Python-project-tus-masters-2022/data/Ref Data.csv", "r") as data_file:
+    with open("data/Ref Data.csv", "r") as data_file:
         # remove the headers from the data
         headers = data_file.readline()
         # loop through the lines of data in the file
