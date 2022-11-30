@@ -121,6 +121,9 @@ def get_average_fouls_per_game(total_games):
     average_fouls_rounded = round(average_fouls_in_season, 2)
     return average_fouls_rounded
 
+def test_get_average_fouls_per_game():
+    assert get_average_fouls_per_game(380) == 78
+
 def get_median_fouls_per_game(total_fouls):
     """
     This function calculates the median number of fouls per game over the season

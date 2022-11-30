@@ -33,10 +33,14 @@ def dict_from_average_fouls_per_game(referees_data: dict, num_of_games_reffed: d
 
 def ref_with_most_fouls_given(referees_data):
     ref_with_most_fouls = max(referees_data, key=referees_data.get)
+    num_of_fouls_given = max(referees_data.values())
+    ref_with_most_fouls = f"The referee who gave the most fouls in the 2021/22 season was: {ref_with_most_fouls} with a total fouls given of {num_of_fouls_given}"
     return ref_with_most_fouls
 
 def ref_with_least_fouls_given(referees_data):
     ref_with_least_fouls = min(referees_data, key=referees_data.get)
+    num_of_fouls_given = min(referees_data.values())
+    ref_with_least_fouls = f"The referee who gave the least fouls in the 2021/22 season was: {ref_with_least_fouls} with a total fouls given of {num_of_fouls_given}"
     return ref_with_least_fouls
 
 def ref_with_highest_average_of_fouls_given_per_game(ref_with_avg_value):

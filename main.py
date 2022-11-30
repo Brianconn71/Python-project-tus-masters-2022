@@ -34,9 +34,9 @@ def print_statements():
     # printing the distinct number of regeree sub categories
     print(f"The distinct number of referees is: {sub_categories}")
     # printing the referee who gave the most fouls in 21/22
-    print(f"The referee who gave the most fouls in the 2021/22 season was: {ref_with_most_fouls}")
+    print(ref_with_most_fouls)
     # printing the referee who gave the least fouls in 21/22
-    print(f"The referee who gave the least fouls in the 2021/22 season was: {ref_with_least_fouls}")
+    print(ref_with_least_fouls)
     # printing the referee who gave the highest average oof fouls per game in which they officiated in 21/22
     print(highest_avg_fouls_per_game)
     # printing the referee who gave the lowest average oof fouls per game in which they officiated in 21/22
@@ -96,5 +96,7 @@ if __name__ == "__main__":
     highest_avg_fouls_per_game = ref_with_highest_average_of_fouls_given_per_game(average_fouls_per_game_dict)
     # gets the referee with the lowest average of fouls given and returns for use in print statement from dictionary_calculations.py using function ref_with_lowest_average_of_fouls_given_per_game
     lowest_avg_fouls_per_game = ref_with_lowest_average_of_fouls_given_per_game(average_fouls_per_game_dict)
+    pie_chart_from_data(average_fouls_per_game_dict)
+    bar_chart_from_data(average_fouls_per_game_dict)
     # calling the print_statements function above to print statements to the console
     print_statements()

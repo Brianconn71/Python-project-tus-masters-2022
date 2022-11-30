@@ -26,7 +26,7 @@ def bar_chart_from_data(data_dict):
 
     # set avix labels
     ax.set_ylabel("Referees")
-    ax.set_xlabel("Average fouls")
+    ax.set_xlabel("Fouls")
 
     # create bar cahrt
     ax.barh(list(data_dict.keys()), data_dict.values())
