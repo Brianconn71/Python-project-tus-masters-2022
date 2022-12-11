@@ -9,7 +9,7 @@ def test_get_number_of_games_in_season():
     pass
 
 def test_get_average_fouls_per_game():
-    assert get_average_fouls_per_game(380) == 78
+    assert get_average_fouls_per_game(380) == 380
 
 
 if __name__ == "__main__":
@@ -19,4 +19,5 @@ if __name__ == "__main__":
     total_games = len(home_fouls)
     # gets the average fouls per game in season from get_average_fouls_per_game function in calculations.py
     average_fouls = get_average_fouls_per_game(total_games)
-    test_get_average_fouls_per_game(total_games)
+    test_get_average_fouls_per_game()
+    pytest.main(["__file__", "-vv"])
