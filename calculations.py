@@ -393,10 +393,19 @@ def get_correlation_of_fouls(home_fouls, away_fouls):
     Returns:
         correlation: the correlation between the two lists.
     """    
-    covariance = get_covariance_between_datasets(home_fouls, away_fouls)
-    home_and_away = home_fouls + away_fouls
-    length_of_home_and_away = len(home_and_away)
-    std_dev_home_fouls = get_standard_deviation_of_fouls(home_fouls, length_of_home_and_away)
-    std_dev_away_fouls = get_standard_deviation_of_fouls(away_fouls, length_of_home_and_away)
-    correlation = covariance / (std_dev_home_fouls * covariance)
+    home_avg = sum(home_fouls) / len(home_fouls)
+    away_avg = sum(away_fouls) / len(away_fouls)
+    mean_diff_home = []
+    mean_diff_away = []
+    for home_foul, away_foul in zip(home_fouls, away_fouls):
+        mean_diff_home.append(home_foul-home_avg)
+        mean_diff_away.append(away_foul-away_avg)
+    home_sqr_list = []
+    away_sqr_list = []
+    diff = []
+    for home_diff, away_diff in zip(mean_diff_home, mean_diff_away):
+        home_sqr_list.append(home_diff*home_diff)
+        away_sqr_list.append(away_diff*away_diff)
+        diff.append(home_diff*away_diff)
+    correlation= sum(diff)/ ((sum(home_sqr_list) * sum(away_sqr_list)) ** 0.5)
     return correlation

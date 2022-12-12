@@ -56,8 +56,8 @@ def test_get_covariance_between_datasets():
     assert output == pytest.approx(4.3)
 
 def test_get_correlation_of_fouls():
-    output = get_correlation_of_fouls([23,45,32,12,34], [19,20,20,40,50])
-    assert output == pytest.approx(4.3)
+    output = get_correlation_of_fouls([23,45,32,12,34], [19,20,20,40,50], 5)
+    assert output == pytest.approx(-0.27,0.1)
     
 
 if __name__ == "__main__":
