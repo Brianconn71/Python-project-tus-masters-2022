@@ -39,24 +39,24 @@ def test_get_interquartile_range_of_fouls():
     assert output == pytest.approx(4.3)
 
 def test_get_standard_deviation_of_fouls():
-    output = get_standard_deviation_of_fouls([19,20,20,40,50],380)
-    assert output == pytest.approx(4.3)
+    output = get_standard_deviation_of_fouls([19,20,20,40,50])
+    assert output == pytest.approx(14,0.1)
 
 
 def test_get_pearson_mode_skewness_of_fouls():
-    output = get_pearson_mode_skewness_of_fouls(380, [19,20,20,40,50])
-    assert output == pytest.approx(4.3)
+    output = get_pearson_mode_skewness_of_fouls([19,20,20,40,50])
+    assert output == pytest.approx(0.6,0.2)
 
 def test_get_alternative_pearson_mode_skewness_of_fouls():
-    output = get_alternative_pearson_mode_skewness_of_fouls(380, [19,20,20,40,50])
-    assert output == pytest.approx(4.3)
+    output = get_alternative_pearson_mode_skewness_of_fouls([19,20,20,40,50])
+    assert output == pytest.approx(2,0.1)
 
 def test_get_covariance_between_datasets():
     output = get_covariance_between_datasets([23,45,32,12,34], [19,20,20,40,50])
-    assert output == pytest.approx(4.3)
+    assert output == pytest.approx(-38,0.1)
 
 def test_get_correlation_of_fouls():
-    output = get_correlation_of_fouls([23,45,32,12,34], [19,20,20,40,50], 5)
+    output = get_correlation_of_fouls([23,45,32,12,34], [19,20,20,40,50])
     assert output == pytest.approx(-0.27,0.1)
     
 
