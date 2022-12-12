@@ -10,12 +10,57 @@ def test_get_total_fouls_per_game_in_season():
     assert len(output) == 380
     assert type(output) == list
 
+def test_get_average_fouls_per_game():
+    output = get_average_fouls_per_game(380)
+    assert output == pytest.approx(20.21)
+
+def test_get_median_fouls_per_game():
+    output = get_median_fouls_per_game([1,2,3,4,5])
+    assert output == 3
+
+def test_get_mode_fouls_per_game():
+    output = get_mode_fouls_per_game([1,2,2,4,5])
+    assert output == 2
+
+def test_get_maximum_fouls_in_a_game():
+    output = get_maximum_fouls_in_a_game([2.2, 3.5, 1.5, 7.3, 5.0])
+    assert output == pytest.approx(7.3)
+
+def test_get_minimum_fouls_in_a_game():
+    output = get_minimum_fouls_in_a_game([2.2, 3.5, 1.5, 7.3, 5.0])
+    assert output == pytest.approx(1.5)
+
+def test_get_range_of_fouls():
+    output = get_range_of_fouls(5, 3)
+    assert output == f"3, 5"
+
+def test_get_interquartile_range_of_fouls():
+    output = get_interquartile_range_of_fouls([2.2, 3.5, 1.5, 7.3, 5.0])
+    assert output == pytest.approx(4.3)
+
+def test_get_standard_deviation_of_fouls():
+    output = get_standard_deviation_of_fouls([19,20,20,40,50],380)
+    assert output == pytest.approx(4.3)
+
+
+def test_get_pearson_mode_skewness_of_fouls():
+    output = get_pearson_mode_skewness_of_fouls(380, [19,20,20,40,50])
+    assert output == pytest.approx(4.3)
+
+def test_get_alternative_pearson_mode_skewness_of_fouls():
+    output = get_alternative_pearson_mode_skewness_of_fouls(380, [19,20,20,40,50])
+    assert output == pytest.approx(4.3)
+
+def test_get_covariance_between_datasets():
+    output = get_covariance_between_datasets([23,45,32,12,34], [19,20,20,40,50])
+    assert output == pytest.approx(4.3)
+
+def test_get_correlation_of_fouls():
+    output = get_correlation_of_fouls([23,45,32,12,34], [19,20,20,40,50])
+    assert output == pytest.approx(4.3)
+    
+
 if __name__ == "__main__":
     # calls the read_data_and_create_lists in calculations.py to read data from csv and split into lists
     read_data_and_create_lists()
-    # get_total_fouls_per_game_in_season()
-    # uses the length of the home_fouls list (always has at least one value) to calculate total games
-    total_games = len(home_fouls)
-    # gets the average fouls per game in season from get_average_fouls_per_game function in calculations.py
-    average_fouls = get_average_fouls_per_game(total_games)
     pytest.main(["test_calculations.py", "-vv"])
