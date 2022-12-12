@@ -67,4 +67,4 @@ def box_plots(data_dict):
     plt.show()
     
     #save the fig
-    fig.savefig('charts/boxplots.png', bbox_inches='tight')
+    fig.savefig('charts/boxplots_from_dictionary.png', bbox_inches='tight')

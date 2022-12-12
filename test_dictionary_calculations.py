@@ -35,6 +35,11 @@ def test_ref_with_highest_average_of_fouls_given_per_game():
     assert output == "The referee who had the highest average of fouls given per game in the 2021/22 season was: B connolly with an average fouls per game of 13.45 "
     assert type(output) == str
 
+def test_ref_with_lowest_average_of_fouls_given_per_game():
+    output = ref_with_lowest_average_of_fouls_given_per_game({"B connolly": 13.45, "A man": 4.3})
+    assert output == "The referee who had the lowest average of fouls given per game in the 2021/22 season was: A man with an average fouls per game of 4.3 "
+    assert type(output) == str
+
 if __name__ == "__main__":
     # calls the read_data_and_create_lists in calculations.py to read data from csv and split into lists
     read_data_and_create_lists()
