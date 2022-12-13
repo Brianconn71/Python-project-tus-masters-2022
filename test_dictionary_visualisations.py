@@ -7,8 +7,8 @@ def test_pie_chart_from_data():
     pie_chart_from_data({"B connolly": 23.5, "A man": 14.2})
     assert True
 
-def test_box_plots():
-    box_plots({"B connolly": 23.5, "A man": 14.2})
+def test_box_plots_from_dict():
+    box_plots_from_dict({"B connolly": 23.5, "A man": 14.2})
     assert True
 
 def test_bar_chart_from_data():

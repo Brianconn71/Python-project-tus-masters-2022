@@ -23,12 +23,12 @@ def test_get_mode_fouls_per_game():
     assert output == 2
 
 def test_get_maximum_fouls_in_a_game():
-    output = get_maximum_fouls_in_a_game([2.2, 3.5, 1.5, 7.3, 5.0])
-    assert output == pytest.approx(7.3)
+    output = get_maximum_fouls_in_a_game([2, 3, 1, 7, 5])
+    assert output == pytest.approx(7)
 
 def test_get_minimum_fouls_in_a_game():
-    output = get_minimum_fouls_in_a_game([2.2, 3.5, 1.5, 7.3, 5.0])
-    assert output == pytest.approx(1.5)
+    output = get_minimum_fouls_in_a_game([2, 3, 1, 7, 5])
+    assert output == pytest.approx(1)
 
 def test_get_range_of_fouls():
     output = get_range_of_fouls(5, 3)
@@ -57,7 +57,7 @@ def test_get_covariance_between_datasets():
 
 def test_get_correlation_of_fouls():
     output = get_correlation_of_fouls([23,45,32,12,34], [19,20,20,40,50])
-    assert output == pytest.approx(-0.27,0.1)
+    assert output == pytest.approx(-0.25,0.1)
     
 
 if __name__ == "__main__":

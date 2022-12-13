@@ -5,7 +5,7 @@ def pie_chart_from_data(average_fouls_dict):
     fig, ax = plt.subplots(figsize=(15,10))
 
     # setting title
-    ax.set_title("Pie chart showing average number of fouls per referee over the 2021/22 season")
+    ax.set_title("Pie chart showing average number of fouls per referee as a percentage of total fouls over the 2021/22 season")
 
     # creating the pie charts
     ax.pie(average_fouls_dict.values(), labels=average_fouls_dict.keys(), autopct="%.2f%%")
