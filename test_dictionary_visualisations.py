@@ -1,21 +1,26 @@
-from visualisations import *
-from calculations import *
-from dictionary_calculations import *
+from dictionary_visualisations import (
+    pie_chart_from_data, box_plots_from_dict, bar_chart_from_data)
+from calculations import read_data_and_create_lists
 import pytest
+
 
 def test_pie_chart_from_data():
     pie_chart_from_data({"B connolly": 23.5, "A man": 14.2})
     assert True
 
+
 def test_box_plots_from_dict():
     box_plots_from_dict({"B connolly": 23.5, "A man": 14.2})
     assert True
+
 
 def test_bar_chart_from_data():
     bar_chart_from_data({"B connolly": 23.5, "A man": 14.2})
     assert True
 
+
 if __name__ == "__main__":
-    # calls the read_data_and_create_lists in calculations.py to read data from csv and split into lists
+    # calls the read_data_and_create_lists in calculations.py to read data
+    # from csv and split into lists
     read_data_and_create_lists()
     pytest.main(["test_dictionary_visualisations.py", "-vv"])
