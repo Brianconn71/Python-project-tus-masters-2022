@@ -109,13 +109,15 @@ def read_data_and_create_lists():
                     # appending data to home_yellows list
                     home_yellows.append(int(home_yellow))
                 except ValueError:
-                    print(f"{home_yellow} could not be converted to an integer")
+                    print(f"{home_yellow} could not be converted "
+                          f"to an integer")
                     continue
                 try:
                     # appending data to away_yellows list
                     away_yellows.append(int(away_yellow))
                 except ValueError:
-                    print(f"{away_yellow} could not be converted to an integer")
+                    print(f"{away_yellow} could not be converted "
+                          f"to an integer")
                     continue
                 try:
                     # appending data to home_reds list
