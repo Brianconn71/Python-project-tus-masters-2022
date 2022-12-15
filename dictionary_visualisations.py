@@ -1,24 +1,24 @@
 import matplotlib.pyplot as plt
 
 
-def pie_chart_from_data(average_fouls_dict):
+def pie_chart_from_data(fouls_dict):
     """
     Plots a pie chart based on the dictionary passed
 
     Args:
-        average_fouls_dict (dict): Dictionary of each referee
-        in the data along with their average foul per game value
+        fouls_dict (dict): Dictionary of each referee
+        showing the data along with their total foul per game value
     """
     # fig and ax declarations
     fig, ax = plt.subplots(figsize=(15, 10))
 
     # setting title
     ax.set_title(
-        "Pie chart showing average number of fouls per referee as a "
+        "Pie chart showing total number of fouls per referee as a "
         "percentage of total fouls over the 2021/22 season")
 
     # creating the pie charts
-    ax.pie(average_fouls_dict.values(), labels=average_fouls_dict.keys(),
+    ax.pie(fouls_dict.values(), labels=fouls_dict.keys(),
            autopct="%.2f%%")
 
     # show the figure

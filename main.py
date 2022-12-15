@@ -187,9 +187,9 @@ if __name__ == "__main__":
         ref_with_lowest_average_of_fouls_given_per_game(
             average_fouls_per_game_dict))
     # calling the pie_chart_from_data from dictionary_visualisations.py to
-    # create a pie chart from average referees data dictionary and
+    # create a pie chart from total referees data dictionary and
     # place diagram in charts folder
-    pie_chart_from_data(average_fouls_per_game_dict)
+    pie_chart_from_data(referees_total_fouls_data)
     # calling the bar_chart_from_data from dictionary_visualisations.py to
     # create a horizontal bar chart from average referees data dictionary
     # and place diagram in charts folder
