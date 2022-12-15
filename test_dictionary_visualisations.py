@@ -5,17 +5,32 @@ import pytest
 
 
 def test_pie_chart_from_data():
+    """
+    tests that a pie chart will correctly plot from the dictionary passed
+    """
+    # calls the function with a dictionary argument
     pie_chart_from_data({"B connolly": 23.5, "A man": 14.2})
+    # asserts true if function plots
     assert True
 
 
 def test_box_plots_from_dict():
+    """
+    tests that a box plot will correctly plot from the dictionary passed
+    """
+    # calls the function with a dictionary argument
     box_plots_from_dict({"B connolly": 23.5, "A man": 14.2})
+    # asserts true if function plots
     assert True
 
 
 def test_bar_chart_from_data():
+    """
+    tests that a bar chart will correctly plot from the dictionary passed
+    """
+    # calls the function with a dictionary argument
     bar_chart_from_data({"B connolly": 23.5, "A man": 14.2})
+    # asserts true if function plots
     assert True
 
 

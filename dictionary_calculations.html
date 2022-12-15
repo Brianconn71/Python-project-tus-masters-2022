@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module dictionary_calculations</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>dictionary_calculations</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/bconnolly/Python-project-tus-masters-2022/dictionary_calculations.py">/home/bconnolly/Python-project-tus-masters-2022/dictionary_calculations.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="pydoc.html">pydoc</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-dict_from_average_fouls_per_game"><strong>dict_from_average_fouls_per_game</strong></a>(referees_data, num_of_games_reffed)</dt><dd><tt>takes&nbsp;in&nbsp;two&nbsp;dictionaries&nbsp;representing&nbsp;refereed&nbsp;data&nbsp;and&nbsp;returns&nbsp;a&nbsp;new&nbsp;dict<br>
+with&nbsp;the&nbsp;referee&nbsp;and&nbsp;average&nbsp;fouls&nbsp;given&nbsp;by&nbsp;each&nbsp;referee<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;referees_data&nbsp;(dict):&nbsp;dictionary&nbsp;of&nbsp;referees&nbsp;and&nbsp;total&nbsp;fouls&nbsp;given<br>
+&nbsp;&nbsp;&nbsp;&nbsp;num_of_games_reffed&nbsp;(dict):&nbsp;dictionary&nbsp;of&nbsp;referees&nbsp;and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;of&nbsp;games&nbsp;referred<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ref_with_avg_value&nbsp;(dict):&nbsp;a&nbsp;new&nbsp;dictionary&nbsp;with&nbsp;referees&nbsp;and&nbsp;their<br>
+&nbsp;&nbsp;&nbsp;&nbsp;average&nbsp;fouls&nbsp;given&nbsp;over&nbsp;the&nbsp;season</tt></dd></dl>
+ <dl><dt><a name="-distinct_sub_categories"><strong>distinct_sub_categories</strong></a>(total_referees_data)</dt><dd><tt>This&nbsp;fucntion&nbsp;will&nbsp;take&nbsp;in&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;referees&nbsp;data&nbsp;and&nbsp;gets&nbsp;the<br>
+len&nbsp;of&nbsp;the&nbsp;dict.keys()&nbsp;to&nbsp;return&nbsp;distict&nbsp;number&nbsp;of&nbsp;referees<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;total_referees_data&nbsp;(dict):&nbsp;dictionary&nbsp;of&nbsp;referees&nbsp;and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;total&nbsp;fouls&nbsp;given<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number_of_referees&nbsp;(int):&nbsp;distinct&nbsp;number&nbsp;of&nbsp;referees</tt></dd></dl>
+ <dl><dt><a name="-get_dict_of_refs_and_occurances_in_data"><strong>get_dict_of_refs_and_occurances_in_data</strong></a>(referees)</dt><dd><tt>gets&nbsp;the&nbsp;list&nbsp;of&nbsp;referees,&nbsp;counts&nbsp;its&nbsp;occuraancws&nbsp;in&nbsp;the&nbsp;list&nbsp;and<br>
+adds&nbsp;the&nbsp;values&nbsp;to&nbsp;a&nbsp;dictionary<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;referees&nbsp;(list[str]):&nbsp;list&nbsp;of&nbsp;strings<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;num_of_games_reffed&nbsp;(Dict):&nbsp;dictionary&nbsp;of&nbsp;unique&nbsp;referees&nbsp;and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;how&nbsp;often&nbsp;they&nbsp;have&nbsp;reffed&nbsp;games</tt></dd></dl>
+ <dl><dt><a name="-get_total_refs_data"><strong>get_total_refs_data</strong></a>(ref_data, total_fouls_per_game)</dt><dd><tt>takes&nbsp;in&nbsp;a&nbsp;list&nbsp;of&nbsp;referees&nbsp;and&nbsp;a&nbsp;list&nbsp;of&nbsp;integers&nbsp;with&nbsp;total&nbsp;fouls&nbsp;and<br>
+returns&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;referees&nbsp;as&nbsp;keys&nbsp;and&nbsp;the&nbsp;total&nbsp;fouls&nbsp;they<br>
+gave&nbsp;over&nbsp;the&nbsp;season&nbsp;as&nbsp;the&nbsp;values<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ref_data&nbsp;(list[str]):&nbsp;list&nbsp;of&nbsp;strings<br>
+&nbsp;&nbsp;&nbsp;&nbsp;total_fouls_per_game&nbsp;(list[int]):&nbsp;list&nbsp;of&nbsp;integers<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;total_referees_data&nbsp;(dict):&nbsp;dictionary&nbsp;of&nbsp;unique&nbsp;referees<br>
+&nbsp;&nbsp;&nbsp;&nbsp;total&nbsp;fouls&nbsp;given&nbsp;over&nbsp;season</tt></dd></dl>
+ <dl><dt><a name="-ref_with_highest_average_of_fouls_given_per_game"><strong>ref_with_highest_average_of_fouls_given_per_game</strong></a>(ref_with_avg_value)</dt><dd><tt>Gets&nbsp;the&nbsp;ref&nbsp;&nbsp;who&nbsp;gave&nbsp;highest&nbsp;average&nbsp;of&nbsp;fouls&nbsp;in&nbsp;21/22&nbsp;by&nbsp;taking&nbsp;the<br>
+value&nbsp;from&nbsp;a&nbsp;dictionary&nbsp;displaying&nbsp;ref&nbsp;data&nbsp;and&nbsp;average&nbsp;given&nbsp;by&nbsp;each<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ref_with_avg_value&nbsp;(dict):&nbsp;dictionary&nbsp;of&nbsp;referees&nbsp;and&nbsp;average<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fouls&nbsp;given&nbsp;per&nbsp;game<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;highest_avg_value&nbsp;(str):&nbsp;string&nbsp;value&nbsp;of&nbsp;ref&nbsp;had&nbsp;the&nbsp;highest&nbsp;average<br>
+&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;fouls&nbsp;per&nbsp;game</tt></dd></dl>
+ <dl><dt><a name="-ref_with_least_fouls_given"><strong>ref_with_least_fouls_given</strong></a>(referees_data)</dt><dd><tt>Gets&nbsp;the&nbsp;ref&nbsp;&nbsp;who&nbsp;gave&nbsp;least&nbsp;fouls&nbsp;in&nbsp;21/22&nbsp;by&nbsp;taking&nbsp;the&nbsp;min&nbsp;value&nbsp;from&nbsp;a<br>
+dictionary&nbsp;displaying&nbsp;ref&nbsp;data&nbsp;and&nbsp;total&nbsp;fouls&nbsp;given&nbsp;by&nbsp;each<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;referees_data&nbsp;(dict):&nbsp;dictionary&nbsp;of&nbsp;referees&nbsp;and&nbsp;total&nbsp;fouls&nbsp;given<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ref_with_least_fouls&nbsp;(str):&nbsp;string&nbsp;value&nbsp;of&nbsp;ref&nbsp;who&nbsp;gave&nbsp;least&nbsp;fouls</tt></dd></dl>
+ <dl><dt><a name="-ref_with_lowest_average_of_fouls_given_per_game"><strong>ref_with_lowest_average_of_fouls_given_per_game</strong></a>(ref_with_avg_value)</dt><dd><tt>Gets&nbsp;the&nbsp;ref&nbsp;&nbsp;who&nbsp;gave&nbsp;lowest&nbsp;average&nbsp;of&nbsp;fouls&nbsp;in&nbsp;21/22&nbsp;by&nbsp;taking&nbsp;the<br>
+value&nbsp;from&nbsp;a&nbsp;dictionary&nbsp;displaying&nbsp;ref&nbsp;data&nbsp;and&nbsp;average&nbsp;given&nbsp;by&nbsp;each<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ref_with_avg_value&nbsp;(dict):&nbsp;dictionary&nbsp;of&nbsp;referees&nbsp;and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;average&nbsp;fouls&nbsp;per&nbsp;game<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lowest_average_value&nbsp;(str):&nbsp;string&nbsp;value&nbsp;of&nbsp;ref&nbsp;had&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lowest&nbsp;average&nbsp;of&nbsp;fouls&nbsp;per&nbsp;game</tt></dd></dl>
+ <dl><dt><a name="-ref_with_most_fouls_given"><strong>ref_with_most_fouls_given</strong></a>(referees_data)</dt><dd><tt>Gets&nbsp;the&nbsp;ref&nbsp;&nbsp;who&nbsp;gave&nbsp;most&nbsp;fouls&nbsp;in&nbsp;21/22&nbsp;by&nbsp;taking&nbsp;the&nbsp;max&nbsp;value&nbsp;from&nbsp;a<br>
+dictionary&nbsp;displaying&nbsp;ref&nbsp;data&nbsp;and&nbsp;total&nbsp;fouls&nbsp;given&nbsp;by&nbsp;each<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;referees_data&nbsp;(dict):&nbsp;dictionary&nbsp;of&nbsp;referees&nbsp;and&nbsp;total&nbsp;fouls&nbsp;given<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ref_with_most_fouls&nbsp;(str):&nbsp;string&nbsp;value&nbsp;of&nbsp;ref&nbsp;who&nbsp;gave&nbsp;most&nbsp;fouls</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>num_of_games_reffed</strong> = {}<br>
+<strong>ref_with_avg_value</strong> = {}<br>
+<strong>total_referees_data</strong> = {}</td></tr></table>
+</body></html>

@@ -1,6 +1,3 @@
-import pydoc
-
-
 # initializing the lists globally for use with entire file.
 referees = []
 full_time_home_goals = []

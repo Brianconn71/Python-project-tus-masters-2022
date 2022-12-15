@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module calculations</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>calculations</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/bconnolly/Python-project-tus-masters-2022/calculations.py">/home/bconnolly/Python-project-tus-masters-2022/calculations.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="pydoc.html">pydoc</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-get_alternative_pearson_mode_skewness_of_fouls"><strong>get_alternative_pearson_mode_skewness_of_fouls</strong></a>(total_fouls_per_game)</dt><dd><tt>Get&nbsp;the&nbsp;alternative&nbsp;pearson&nbsp;mode&nbsp;skewness&nbsp;from&nbsp;the&nbsp;data<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;total_fouls_per_game&nbsp;(list[int]):&nbsp;list&nbsp;of&nbsp;integers&nbsp;to&nbsp;calculate<br>
+&nbsp;&nbsp;&nbsp;&nbsp;alternative&nbsp;pearson&nbsp;mode&nbsp;from<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;alternative_pearson_skew:&nbsp;the&nbsp;alternative&nbsp;pearson&nbsp;mode<br>
+&nbsp;&nbsp;&nbsp;&nbsp;skewness&nbsp;from&nbsp;the&nbsp;data</tt></dd></dl>
+ <dl><dt><a name="-get_average_fouls_per_game"><strong>get_average_fouls_per_game</strong></a>(total_games)</dt><dd><tt>Takes&nbsp;in&nbsp;the&nbsp;total&nbsp;games&nbsp;in&nbsp;a&nbsp;season&nbsp;and&nbsp;uses&nbsp;this&nbsp;as&nbsp;the&nbsp;divisor&nbsp;in&nbsp;the<br>
+equation&nbsp;to&nbsp;get&nbsp;the&nbsp;average&nbsp;fouls&nbsp;per&nbsp;game&nbsp;which&nbsp;is&nbsp;a&nbsp;total<br>
+of&nbsp;home&nbsp;fouls&nbsp;+&nbsp;away&nbsp;fouls&nbsp;and&nbsp;divided.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;then&nbsp;rounded&nbsp;to&nbsp;two&nbsp;decimal&nbsp;places<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;total_games&nbsp;(list[int]):&nbsp;total&nbsp;games&nbsp;in&nbsp;season&nbsp;which&nbsp;was&nbsp;obtained<br>
+&nbsp;&nbsp;&nbsp;&nbsp;in&nbsp;the&nbsp;get_number_of_games_in_season&nbsp;function<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;average_fouls_rounded&nbsp;(float):&nbsp;the&nbsp;float&nbsp;value&nbsp;of&nbsp;the&nbsp;average&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;the&nbsp;lists&nbsp;correct&nbsp;to&nbsp;two&nbsp;decimal&nbsp;places</tt></dd></dl>
+ <dl><dt><a name="-get_correlation_of_fouls"><strong>get_correlation_of_fouls</strong></a>(home_fouls, away_fouls)</dt><dd><tt>Gets&nbsp;the&nbsp;correlation&nbsp;between&nbsp;two&nbsp;lists&nbsp;of&nbsp;integers&nbsp;from&nbsp;the&nbsp;data<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;home_fouls&nbsp;(list[int]):&nbsp;list&nbsp;of&nbsp;integers&nbsp;containing&nbsp;home<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fouls&nbsp;per&nbsp;game&nbsp;per&nbsp;season<br>
+&nbsp;&nbsp;&nbsp;&nbsp;away_fouls&nbsp;(list[int]):&nbsp;list&nbsp;of&nbsp;integers&nbsp;containing&nbsp;away<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fouls&nbsp;per&nbsp;game&nbsp;per&nbsp;season<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;correlation:&nbsp;the&nbsp;correlation&nbsp;between&nbsp;the&nbsp;two&nbsp;lists.</tt></dd></dl>
+ <dl><dt><a name="-get_covariance_between_datasets"><strong>get_covariance_between_datasets</strong></a>(home_fouls, away_fouls)</dt><dd><tt>Gets&nbsp;the&nbsp;covariance&nbsp;between&nbsp;ywo&nbsp;lists&nbsp;of&nbsp;integers&nbsp;from&nbsp;the&nbsp;data<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;home_fouls&nbsp;(list[int]):&nbsp;list&nbsp;of&nbsp;integers&nbsp;containing&nbsp;home<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fouls&nbsp;per&nbsp;game&nbsp;per&nbsp;season<br>
+&nbsp;&nbsp;&nbsp;&nbsp;away_fouls&nbsp;(list[int]):&nbsp;list&nbsp;of&nbsp;integers&nbsp;containing&nbsp;away<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fouls&nbsp;per&nbsp;game&nbsp;per&nbsp;season<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;co_var:&nbsp;the&nbsp;co&nbsp;variance&nbsp;between&nbsp;the&nbsp;two&nbsp;lists&nbsp;of&nbsp;integers</tt></dd></dl>
+ <dl><dt><a name="-get_interquartile_range_of_fouls"><strong>get_interquartile_range_of_fouls</strong></a>(total_fouls_per_game)</dt><dd><tt>Get&nbsp;the&nbsp;interquartile&nbsp;range&nbsp;from&nbsp;list&nbsp;of&nbsp;integers<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;total_fouls_per_game&nbsp;(list[int]):&nbsp;list&nbsp;of&nbsp;integers&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;calculate&nbsp;interquartile&nbsp;range&nbsp;from<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;interquartile_range:&nbsp;interquartile&nbsp;range&nbsp;for&nbsp;the&nbsp;list&nbsp;of&nbsp;integers.</tt></dd></dl>
+ <dl><dt><a name="-get_maximum_fouls_in_a_game"><strong>get_maximum_fouls_in_a_game</strong></a>(total_fouls)</dt><dd><tt>This&nbsp;function&nbsp;gets&nbsp;the&nbsp;maximum&nbsp;value&nbsp;in&nbsp;the&nbsp;total&nbsp;fouls&nbsp;list.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;total_fouls&nbsp;(list[int]):&nbsp;List&nbsp;of&nbsp;integers&nbsp;representing&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;total&nbsp;number&nbsp;of&nbsp;fouls&nbsp;per&nbsp;game&nbsp;over&nbsp;the&nbsp;season.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;will&nbsp;contain&nbsp;380&nbsp;values<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;max_fouls&nbsp;(int):&nbsp;the&nbsp;integer&nbsp;value&nbsp;of&nbsp;hoghest&nbsp;value&nbsp;in&nbsp;the&nbsp;list.</tt></dd></dl>
+ <dl><dt><a name="-get_median_fouls_per_game"><strong>get_median_fouls_per_game</strong></a>(total_fouls)</dt><dd><tt>This&nbsp;function&nbsp;calculates&nbsp;the&nbsp;median&nbsp;number&nbsp;of&nbsp;fouls&nbsp;per&nbsp;game<br>
+over&nbsp;the&nbsp;season<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;total_fouls&nbsp;(list[int]):&nbsp;A&nbsp;list&nbsp;of&nbsp;integers&nbsp;which&nbsp;show&nbsp;total<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;of&nbsp;fouls&nbsp;per&nbsp;game&nbsp;over&nbsp;the&nbsp;season.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;median_value&nbsp;(int):&nbsp;the&nbsp;integer&nbsp;value&nbsp;of&nbsp;the&nbsp;value&nbsp;which<br>
+&nbsp;&nbsp;&nbsp;&nbsp;appears&nbsp;as&nbsp;the&nbsp;middle&nbsp;value&nbsp;in&nbsp;the&nbsp;list</tt></dd></dl>
+ <dl><dt><a name="-get_minimum_fouls_in_a_game"><strong>get_minimum_fouls_in_a_game</strong></a>(total_fouls)</dt><dd><tt>This&nbsp;function&nbsp;gets&nbsp;the&nbsp;minimum&nbsp;value&nbsp;in&nbsp;the&nbsp;total&nbsp;fouls&nbsp;list.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;total_fouls&nbsp;(list[int]):&nbsp;List&nbsp;of&nbsp;integers&nbsp;representing<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;total&nbsp;number&nbsp;of&nbsp;fouls&nbsp;per&nbsp;game&nbsp;over&nbsp;the&nbsp;season.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;will&nbsp;contain&nbsp;380&nbsp;values<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;min_fouls&nbsp;(int):&nbsp;the&nbsp;integer&nbsp;value&nbsp;of&nbsp;lowest&nbsp;value&nbsp;in&nbsp;the&nbsp;list.</tt></dd></dl>
+ <dl><dt><a name="-get_mode_fouls_per_game"><strong>get_mode_fouls_per_game</strong></a>(total_fouls)</dt><dd><tt>This&nbsp;function&nbsp;gets&nbsp;the&nbsp;mode&nbsp;value&nbsp;in&nbsp;the&nbsp;total&nbsp;fouls&nbsp;list.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;total_fouls&nbsp;(list[int]):&nbsp;List&nbsp;of&nbsp;integers&nbsp;representing&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;total&nbsp;number&nbsp;of&nbsp;fouls&nbsp;per&nbsp;game&nbsp;over&nbsp;the&nbsp;season.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;will&nbsp;contain&nbsp;380&nbsp;values<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mode_value&nbsp;(int):&nbsp;the&nbsp;integer&nbsp;value&nbsp;of&nbsp;the&nbsp;value&nbsp;which<br>
+&nbsp;&nbsp;&nbsp;&nbsp;appears&nbsp;most&nbsp;often&nbsp;in&nbsp;the&nbsp;data</tt></dd></dl>
+ <dl><dt><a name="-get_number_of_games_in_season"><strong>get_number_of_games_in_season</strong></a>()</dt><dd><tt>gets&nbsp;the&nbsp;total&nbsp;number&nbsp;of&nbsp;matches&nbsp;in&nbsp;the&nbsp;season.<br>
+&nbsp;<br>
+I&nbsp;am&nbsp;using&nbsp;a&nbsp;function&nbsp;to&nbsp;get&nbsp;the&nbsp;length&nbsp;of&nbsp;the&nbsp;home_fouls&nbsp;list&nbsp;based&nbsp;on<br>
+the&nbsp;assumption&nbsp;that&nbsp;a&nbsp;match&nbsp;will&nbsp;always&nbsp;have&nbsp;at&nbsp;least&nbsp;one<br>
+home_foul&nbsp;per&nbsp;game<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;games_in_season&nbsp;(int):&nbsp;the&nbsp;value&nbsp;indicating&nbsp;the&nbsp;total<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;of&nbsp;games&nbsp;in&nbsp;the&nbsp;season</tt></dd></dl>
+ <dl><dt><a name="-get_pearson_mode_skewness_of_fouls"><strong>get_pearson_mode_skewness_of_fouls</strong></a>(total_fouls_per_game)</dt><dd><tt>Get&nbsp;the&nbsp;pearson&nbsp;mode&nbsp;Skewness&nbsp;of&nbsp;the&nbsp;data<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;total_fouls_per_game&nbsp;(list[int]):&nbsp;list&nbsp;of&nbsp;integers&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;calculate&nbsp;pearson&nbsp;mode&nbsp;Skewness&nbsp;from<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pearson_skew:&nbsp;the&nbsp;pearson&nbsp;mode&nbsp;skewness&nbsp;of&nbsp;the&nbsp;data</tt></dd></dl>
+ <dl><dt><a name="-get_range_of_fouls"><strong>get_range_of_fouls</strong></a>(max_fouls, min_fouls)</dt><dd><tt>Get&nbsp;the&nbsp;range&nbsp;of&nbsp;fouls&nbsp;by&nbsp;subtracting&nbsp;max&nbsp;foul&nbsp;by&nbsp;min&nbsp;foul<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;max_fouls&nbsp;(int):&nbsp;takes&nbsp;in&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;maximum&nbsp;foul<br>
+&nbsp;&nbsp;&nbsp;&nbsp;min_fouls&nbsp;(int):&nbsp;takes&nbsp;in&nbsp;the&nbsp;vaue&nbsp;of&nbsp;the&nbsp;minimum&nbsp;foul<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;range&nbsp;(str):&nbsp;returns&nbsp;a&nbsp;formatted&nbsp;string&nbsp;indicating&nbsp;the&nbsp;range&nbsp;of&nbsp;values</tt></dd></dl>
+ <dl><dt><a name="-get_standard_deviation_of_fouls"><strong>get_standard_deviation_of_fouls</strong></a>(total_fouls_per_game)</dt><dd><tt>Get&nbsp;the&nbsp;Standard&nbsp;deviation&nbsp;from&nbsp;the&nbsp;data&nbsp;using&nbsp;a&nbsp;list&nbsp;of&nbsp;integers<br>
+and&nbsp;total&nbsp;number&nbsp;of&nbsp;games&nbsp;in&nbsp;the&nbsp;season<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;total_fouls_per_game&nbsp;(list[int]):&nbsp;list&nbsp;of&nbsp;integers&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;calculate&nbsp;standard&nbsp;deviation&nbsp;from<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;standard_dev:&nbsp;The&nbsp;standard&nbsp;deviation&nbsp;of&nbsp;the&nbsp;data</tt></dd></dl>
+ <dl><dt><a name="-get_total_fouls_per_game_in_season"><strong>get_total_fouls_per_game_in_season</strong></a>()</dt><dd><tt>This&nbsp;function&nbsp;calculates&nbsp;the&nbsp;total&nbsp;fouls&nbsp;per&nbsp;game&nbsp;over&nbsp;the<br>
+course&nbsp;of&nbsp;the&nbsp;season<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;total_fouls_per_game_in_season&nbsp;(list[int]):&nbsp;list&nbsp;of&nbsp;the&nbsp;total<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fouls&nbsp;per&nbsp;game&nbsp;for&nbsp;the&nbsp;season</tt></dd></dl>
+ <dl><dt><a name="-read_data_and_create_lists"><strong>read_data_and_create_lists</strong></a>()</dt><dd><tt>Reads&nbsp;the&nbsp;data&nbsp;from&nbsp;the&nbsp;csv&nbsp;file&nbsp;in&nbsp;data&nbsp;folder&nbsp;and&nbsp;adds&nbsp;data&nbsp;to&nbsp;lists.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>away_fouls</strong> = []<br>
+<strong>away_reds</strong> = []<br>
+<strong>away_yellows</strong> = []<br>
+<strong>filename</strong> = 'data/Ref_data.csv'<br>
+<strong>full_time_away_goals</strong> = []<br>
+<strong>full_time_home_goals</strong> = []<br>
+<strong>full_time_results</strong> = []<br>
+<strong>half_time_away_goals</strong> = []<br>
+<strong>half_time_home_goals</strong> = []<br>
+<strong>half_time_results</strong> = []<br>
+<strong>home_fouls</strong> = []<br>
+<strong>home_reds</strong> = []<br>
+<strong>home_yellows</strong> = []<br>
+<strong>referees</strong> = []</td></tr></table>
+</body></html>
