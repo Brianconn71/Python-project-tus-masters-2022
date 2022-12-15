@@ -28,7 +28,7 @@ def read_data_and_create_lists():
             # tries to reader headers in csv
             try:
                 # remove the headers from the data
-                headers = data_file.readline()
+                _ = data_file.readline()
             # catches error if data not correct format
             except ValueError:
                 # prints error to console
@@ -48,7 +48,6 @@ def read_data_and_create_lists():
                 except ValueError:
                     # prints error to console
                     print(f"{data} not in correct format")
-                    continue
                 # tries to append correct data to correct list
                 try:
                     # appending data to referees list
@@ -57,7 +56,6 @@ def read_data_and_create_lists():
                 except ValueError:
                     # prints error to console
                     print(f"{referee} not in correct format")
-                    continue
                 # tries to append correct data to correct list
                 try:
                     # appending data to full_time_results list
@@ -66,7 +64,6 @@ def read_data_and_create_lists():
                 except ValueError:
                     # prints error to console
                     print(f"{full_time_result} not in correct format")
-                    continue
                 # tries to append correct data to correct list
                 try:
                     # appending data to half_time_results list
@@ -76,7 +73,6 @@ def read_data_and_create_lists():
                     # prints error to console
                     print(f"{half_time_result} "
                           f"could not be converted to an integer")
-                    continue
                 # tries to append correct data to correct list
                 try:
                     # appending data to full_time__home_goals list
@@ -86,7 +82,6 @@ def read_data_and_create_lists():
                     # prints error to console
                     print(f"{full_time_home_goal} "
                           f"could not be converted to an integer")
-                    continue
                 # tries to append correct data to correct list
                 try:
                     # appending data to full_time__away_goals list
@@ -96,7 +91,6 @@ def read_data_and_create_lists():
                     # prints error to console
                     print(f"{full_time_away_goal} "
                           f"could not be converted to an integer")
-                    continue
                 # tries to append correct data to correct list
                 try:
                     # appending data to half_time__home_goals list
@@ -106,7 +100,6 @@ def read_data_and_create_lists():
                     # prints error to console
                     print(f"{half_time_home_goal} "
                           f"could not be converted to an integer")
-                    continue
                 # tries to append correct data to correct list
                 try:
                     # appending data to half_time__away_goals list
@@ -116,7 +109,6 @@ def read_data_and_create_lists():
                     # prints error to console
                     print(f"{half_time_away_goal} "
                           f"could not be converted to an integer")
-                    continue
                 # tries to append correct data to correct list
                 try:
                     # appending data to home_fouls list
@@ -125,7 +117,6 @@ def read_data_and_create_lists():
                 except ValueError:
                     # prints error to console
                     print(f"{home_foul} could not be converted to an integer")
-                    continue
                 # tries to append correct data to correct list
                 try:
                     # appending data to away_fouls list
@@ -134,7 +125,6 @@ def read_data_and_create_lists():
                 except ValueError:
                     # prints error to console
                     print(f"{away_foul} could not be converted to an integer")
-                    continue
                 # tries to append correct data to correct list
                 try:
                     # appending data to home_yellows list
@@ -144,7 +134,6 @@ def read_data_and_create_lists():
                     # prints error to console
                     print(f"{home_yellow} could not be converted "
                           f"to an integer")
-                    continue
                 # tries to append correct data to correct list
                 try:
                     # appending data to away_yellows list
@@ -154,7 +143,6 @@ def read_data_and_create_lists():
                     # prints error to console
                     print(f"{away_yellow} could not be converted "
                           f"to an integer")
-                    continue
                 # tries to append correct data to correct list
                 try:
                     # appending data to home_reds list
@@ -163,7 +151,6 @@ def read_data_and_create_lists():
                 except ValueError:
                     # prints error to console
                     print(f"{home_red} could not be converted to an integer")
-                    continue
                 # tries to append correct data to correct list
                 try:
                     # appending data to away_reds list
@@ -172,7 +159,6 @@ def read_data_and_create_lists():
                 except ValueError:
                     # prints error to console
                     print(f"{away_red} could not be converted to an integer")
-                    continue
     # catches error if file not found
     except FileNotFoundError:
         # prints error to console
