@@ -1,5 +1,3 @@
-import pydoc
-
 total_referees_data = {}
 num_of_games_reffed = {}
 ref_with_avg_value = {}

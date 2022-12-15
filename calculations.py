@@ -345,7 +345,9 @@ def get_maximum_fouls_in_a_game(total_fouls):
     Returns:
         max_fouls (int): the integer value of hoghest value in the list.
     """
+    # declare a variable to equal the max value of the list passed
     max_fouls = max(total_fouls)
+    # returns the max value in the list
     return max_fouls
 
 
@@ -361,7 +363,9 @@ def get_minimum_fouls_in_a_game(total_fouls):
     Returns:
         min_fouls (int): the integer value of lowest value in the list.
     """
+    # declare a variable to equal the min value of the list passed
     min_fouls = min(total_fouls)
+    # returns the min value in the list
     return min_fouls
 
 
@@ -376,7 +380,10 @@ def get_range_of_fouls(max_fouls, min_fouls):
     Returns:
         range (str): returns a formatted string indicating the range of values
     """
+    # declare a variable to equal a string value equal
+    # to the min and max value passed
     range = f"{min_fouls}, {max_fouls}"
+    # returns the string value
     return range
 
 
@@ -391,19 +398,34 @@ def get_interquartile_range_of_fouls(total_fouls_per_game):
     Returns:
         interquartile_range: interquartile range for the list of integers.
     """
+    # declare a variable to equal the sorted version of the list passed
     sorted_list = sorted(total_fouls_per_game)
+    # finds the middle value in the sorted list
     middle_number = int(len(sorted_list) / 2)
+    # if the list has an odd amount of values
     if len(sorted_list) % 2 == 1:
+        # lower half is a sliced list from first value up to the mid value
         lower_half = sorted_list[:middle_number]
+        # upper half is a sliced list from value after the mid
+        # up to the end of the list
         upper_half = sorted_list[middle_number + 1:]
     else:
+        # lower half is a sliced list from first value up to the mid value
         lower_half = sorted_list[:middle_number]
+        # upper half is a sliced list from the mid value
+        # up to the end of the list
         upper_half = sorted_list[middle_number:]
+    # pass lower half list to the get median fouls function to
+    # return the median of the list
     lower_half_median = get_median_fouls_per_game(lower_half)
+    # pass upper half list to the get median fouls function to
+    # return the median of the list
     upper_half_median = get_median_fouls_per_game(upper_half)
 
+    # interquartile range formula median of upper half minus lower
     interquartile_range = upper_half_median - lower_half_median
 
+    # returns the interquartile range
     return interquartile_range
 
 
@@ -419,15 +441,27 @@ def get_standard_deviation_of_fouls(total_fouls_per_game):
     Returns:
         standard_dev: The standard deviation of the data
     """
+    # mean value formula sum of list values passed
+    # divided by the length of the list
     mean = sum(total_fouls_per_game) / len(total_fouls_per_game)
+    # declare total to 0
     total = 0
+    # loop through list
     for game in total_fouls_per_game:
+        # new variable equal to each loop iteration value minus the
+        # mean declared above
         new_number = game - mean
+        # square the new_number
         new_number_squared = new_number ** 2
+        # add all the squared numbers together on each ieration
         total += new_number_squared
+    # divide the total value by the length of the list minus 1
     divide_by_length = total / (len(total_fouls_per_game) - 1)
+    # find the standard deviation by getting sqrt of the division
+    # value above
     standard_dev = divide_by_length ** (1/2)
 
+    # returns the standard deviation
     return standard_dev
 
 
@@ -442,13 +476,21 @@ def get_pearson_mode_skewness_of_fouls(total_fouls_per_game):
     Returns:
         pearson_skew: the pearson mode skewness of the data
     """
+    # mean value formula sum of list values passed
+    # divided by the length of the list
     mean = sum(total_fouls_per_game) / len(total_fouls_per_game)
+    # get the mode of list passed by calling the get mode fouls
+    # function declared above
     mode = get_mode_fouls_per_game(total_fouls_per_game)
+    # standard deviation formula using the standard deviation function
+    # above and rounded to two decimal places
     standard_dev = (
         round(get_standard_deviation_of_fouls(total_fouls_per_game), 2))
 
+    # pearson skew formula
     pearson_skew = (mean - mode) / standard_dev
 
+    # returns the pearson skew
     return pearson_skew
 
 
@@ -464,12 +506,20 @@ def get_alternative_pearson_mode_skewness_of_fouls(total_fouls_per_game):
         alternative_pearson_skew: the alternative pearson mode
         skewness from the data
     """
+    # mean value formula sum of list values passed
+    # divided by the length of the list
     mean = sum(total_fouls_per_game) / len(total_fouls_per_game)
+    # get the mode of list passed by calling the get mode fouls
+    # function declared above
     mode = get_mode_fouls_per_game(total_fouls_per_game)
+    # standard deviation formula using the standard deviation function
+    # above and rounded to two decimal places
     standard_dev = get_standard_deviation_of_fouls(total_fouls_per_game)
 
+    # alternative pearson skew formula
     alternative_pearson_skew = (3 * (mean - mode)) / standard_dev
 
+    # returns the alternative pearson skew
     return alternative_pearson_skew
 
 
@@ -486,13 +536,23 @@ def get_covariance_between_datasets(home_fouls, away_fouls):
     Returns:
         co_var: the co variance between the two lists of integers
     """
+    # gets and declares a mean value for home fouls
     home_mean = sum(home_fouls) / len(home_fouls)
+    # gets and declares a mean value for away fouls
     away_mean = sum(away_fouls) / len(away_fouls)
+    # initialises an empty list
     totals = []
+    # loops through two lists at the same time
     for home, away in zip(home_fouls, away_fouls):
+        # appends new values to totals list based on the formula
+        # each home value and away value on an iteration of the
+        # loop will minus the mean values found above
         totals.append((home - home_mean) * (away - away_mean))
+    # declares a new variable equal to the sum of the values in totals list
     total_values = sum(totals)
+    # declares co variance to equal the co variance between data sets
     co_var = total_values / (len(home_fouls))
+    # returns the co variance
     return co_var
 
 
@@ -509,20 +569,49 @@ def get_correlation_of_fouls(home_fouls, away_fouls):
     Returns:
         correlation: the correlation between the two lists.
     """
+    # gets and declares a mean value for home fouls
     home_avg = sum(home_fouls) / len(home_fouls)
+    # gets and declares a mean value for away fouls
     away_avg = sum(away_fouls) / len(away_fouls)
+    # new list initialised
     mean_diff_home = []
+    # new list initialised
     mean_diff_away = []
+    # loops through two lists at the same time
     for home_foul, away_foul in zip(home_fouls, away_fouls):
+        # appends new value to list based on
+        # each home_foul iteration minus the
+        # home_avg found above
         mean_diff_home.append(home_foul-home_avg)
+        # appends new value to list based on
+        # each away_foul iteration minus the
+        # away_avg found above
         mean_diff_away.append(away_foul-away_avg)
+    # new list initialised
     home_sqr_list = []
+    # new list initialised
     away_sqr_list = []
+    # new list initialised
     diff = []
+    # loops through two lists at the same time
     for home_diff, away_diff in zip(mean_diff_home, mean_diff_away):
+        # appends new value to list initialised home_sqr_list
+        # new value is equal to the home_diff squared on each
+        # loop iteration
         home_sqr_list.append(home_diff*home_diff)
+        # appends new value to list initialised away_sqr_list
+        # new value is equal to the away_diff squared on each
+        # loop iteration
         away_sqr_list.append(away_diff*away_diff)
+        # appends new value to list initialised diff
+        # new value is equal to the home_diff multiply away_diff
+        # on each loop iteration
         diff.append(home_diff*away_diff)
+    # new variable declared for correlation which equals the formula to
+    # find the correlation which is the sum of the diff list divided by
+    # the square root of the the sum of the home_sqr_list multiplied by
+    # the sum of the away_sqr_list
     correlation = (
         sum(diff) / ((sum(home_sqr_list) * sum(away_sqr_list)) ** 0.5))
+    # returns the correlation value
     return correlation
