@@ -11,6 +11,16 @@ from calculations import (
 import pytest
 
 
+def test_read_data_and_create_lists():
+    """
+    tests read_data_and_create_lists reads the
+    data and creates the correct lists.
+    """
+    # calls the read_data_and_create_lists function
+    output = read_data_and_create_lists()
+    # asserts the returned value is equal to the expected value.
+    assert output == 380
+
 def test_get_number_of_games_in_season():
     """
     tests get_number_of_games_in_season returns the correct number
@@ -181,4 +191,4 @@ if __name__ == "__main__":
     # calls the read_data_and_create_lists in calculations.py to read data
     # from csv and split into lists
     read_data_and_create_lists()
-    pytest.main(["test_calculations.py", "-vv"])
+    pytest.main([__file__, "-vv"])

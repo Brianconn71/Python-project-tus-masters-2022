@@ -47,4 +47,4 @@ if __name__ == "__main__":
     # read data from csv and split into lists
     read_data_and_create_lists()
     # Runs pytest tests on current file
-    pytest.main(["test_visualisations.py", "-vv"])
+    pytest.main([__file__, "-vv"])

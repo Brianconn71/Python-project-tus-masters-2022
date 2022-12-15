@@ -38,4 +38,4 @@ if __name__ == "__main__":
     # calls the read_data_and_create_lists in calculations.py to read data
     # from csv and split into lists
     read_data_and_create_lists()
-    pytest.main(["test_dictionary_visualisations.py", "-vv"])
+    pytest.main([__file__, "-vv"])
