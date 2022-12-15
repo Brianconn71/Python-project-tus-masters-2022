@@ -66,8 +66,6 @@ def distinct_sub_categories(total_referees_data):
     """
     # get number of refs by getting length of total refs data keys
     number_of_referees = len(total_referees_data.keys())
-    # prints dictinct number to console
-    print(f"The distinct number of referees is: {number_of_referees}")
     # returns the distinct number of referees
     return number_of_referees
 

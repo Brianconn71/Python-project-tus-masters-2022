@@ -13,9 +13,6 @@ away_yellows = []
 home_reds = []
 away_reds = []
 
-# setting the csv to be read as a variable
-filename = "data/Ref_data.csv"
-
 
 # read in data and append data from csv to the lists above
 def read_data_and_create_lists():
@@ -24,6 +21,8 @@ def read_data_and_create_lists():
     """
     # tries to open correct file
     try:
+        # setting the csv to be read as a variable
+        filename = "data/Ref_data.csv"
         # Open the data in the correct folder
         with open(filename, "r") as data_file:
             # tries to reader headers in csv

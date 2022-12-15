@@ -21,6 +21,7 @@ def test_read_data_and_create_lists():
     # asserts the returned value is equal to the expected value.
     assert output == 380
 
+
 def test_get_number_of_games_in_season():
     """
     tests get_number_of_games_in_season returns the correct number
@@ -188,7 +189,4 @@ def test_get_correlation_of_fouls():
 
 
 if __name__ == "__main__":
-    # calls the read_data_and_create_lists in calculations.py to read data
-    # from csv and split into lists
-    read_data_and_create_lists()
     pytest.main([__file__, "-vv"])
