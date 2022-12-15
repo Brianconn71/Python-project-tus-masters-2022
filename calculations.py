@@ -13,6 +13,7 @@ away_yellows = []
 home_reds = []
 away_reds = []
 
+# setting the csv to be read as a variable
 filename = "data/Ref_data.csv"
 
 
@@ -21,16 +22,21 @@ def read_data_and_create_lists():
     """
     Reads the data from the csv file in data folder and adds data to lists.
     """
+    # tries to open correct file
     try:
         # Open the data in the correct folder
         with open(filename, "r") as data_file:
+            # tries to reader headers in csv
             try:
                 # remove the headers from the data
                 headers = data_file.readline()
+            # catches error if data not correct format
             except ValueError:
+                # prints error to console
                 print(f"{data_file} not in correct format")
             # loop through the lines of data in the file
             for data in data_file:
+                # tries to split data into correct compnents
                 try:
                     # splittind data into lists
                     (referee, full_time_home_goal, full_time_away_goal,
@@ -39,96 +45,138 @@ def read_data_and_create_lists():
                         away_foul, home_yellow, away_yellow,
                         home_red, away_red) = data.split(
                         ",")
+                # catches error if data not correct format
                 except ValueError:
+                    # prints error to console
                     print(f"{data} not in correct format")
                     continue
-
+                # tries to append correct data to correct list
                 try:
                     # appending data to referees list
                     referees.append(referee)
+                # catches error if data not correct format
                 except ValueError:
+                    # prints error to console
                     print(f"{referee} not in correct format")
                     continue
+                # tries to append correct data to correct list
                 try:
                     # appending data to full_time_results list
                     full_time_results.append(full_time_result)
+                # catches error if data not correct format
                 except ValueError:
+                    # prints error to console
                     print(f"{full_time_result} not in correct format")
                     continue
+                # tries to append correct data to correct list
                 try:
                     # appending data to half_time_results list
                     half_time_results.append(half_time_result)
+                # catches error if data not correct format
                 except ValueError:
+                    # prints error to console
                     print(f"{half_time_result} "
                           f"could not be converted to an integer")
                     continue
+                # tries to append correct data to correct list
                 try:
                     # appending data to full_time__home_goals list
                     full_time_home_goals.append(int(full_time_home_goal))
+                # catches error if data not correct format
                 except ValueError:
+                    # prints error to console
                     print(f"{full_time_home_goal} "
                           f"could not be converted to an integer")
                     continue
+                # tries to append correct data to correct list
                 try:
                     # appending data to full_time__away_goals list
                     full_time_away_goals.append(int(full_time_away_goal))
+                # catches error if data not correct format
                 except ValueError:
+                    # prints error to console
                     print(f"{full_time_away_goal} "
                           f"could not be converted to an integer")
                     continue
+                # tries to append correct data to correct list
                 try:
                     # appending data to half_time__home_goals list
                     half_time_home_goals.append(int(half_time_home_goal))
+                # catches error if data not correct format
                 except ValueError:
+                    # prints error to console
                     print(f"{half_time_home_goal} "
                           f"could not be converted to an integer")
                     continue
+                # tries to append correct data to correct list
                 try:
                     # appending data to half_time__away_goals list
                     half_time_away_goals.append(int(half_time_away_goal))
+                # catches error if data not correct format
                 except ValueError:
+                    # prints error to console
                     print(f"{half_time_away_goal} "
                           f"could not be converted to an integer")
                     continue
+                # tries to append correct data to correct list
                 try:
                     # appending data to home_fouls list
                     home_fouls.append(int(home_foul))
+                # catches error if data not correct format
                 except ValueError:
+                    # prints error to console
                     print(f"{home_foul} could not be converted to an integer")
                     continue
+                # tries to append correct data to correct list
                 try:
                     # appending data to away_fouls list
                     away_fouls.append(int(away_foul))
+                # catches error if data not correct format
                 except ValueError:
+                    # prints error to console
                     print(f"{away_foul} could not be converted to an integer")
                     continue
+                # tries to append correct data to correct list
                 try:
                     # appending data to home_yellows list
                     home_yellows.append(int(home_yellow))
+                # catches error if data not correct format
                 except ValueError:
+                    # prints error to console
                     print(f"{home_yellow} could not be converted "
                           f"to an integer")
                     continue
+                # tries to append correct data to correct list
                 try:
                     # appending data to away_yellows list
                     away_yellows.append(int(away_yellow))
+                # catches error if data not correct format
                 except ValueError:
+                    # prints error to console
                     print(f"{away_yellow} could not be converted "
                           f"to an integer")
                     continue
+                # tries to append correct data to correct list
                 try:
                     # appending data to home_reds list
                     home_reds.append(int(home_red))
+                # catches error if data not correct format
                 except ValueError:
+                    # prints error to console
                     print(f"{home_red} could not be converted to an integer")
                     continue
+                # tries to append correct data to correct list
                 try:
                     # appending data to away_reds list
                     away_reds.append(int(away_red))
+                # catches error if data not correct format
                 except ValueError:
+                    # prints error to console
                     print(f"{away_red} could not be converted to an integer")
                     continue
+    # catches error if file not found
     except FileNotFoundError:
+        # prints error to console
         print(f"{filename} does not exist")
 
 
@@ -204,15 +252,24 @@ def get_average_fouls_per_game(total_games):
         average_fouls_rounded (float): the float value of the average value
         of the lists correct to two decimal places
     """
+    # gets sum of values in home_fouls list
     total_home_fouls = sum(home_fouls)
+    # gets sum of values in away_fouls list
     total_away_fouls = sum(away_fouls)
 
+    # tries to get the average fouls in season
     try:
+        # gets average fols in season by adding the two
+        # values above and dividing by number of games in the season.
         average_fouls_in_season = (
             (total_home_fouls + total_away_fouls) / total_games)
+        # rounds value to two decimal places
         average_fouls_rounded = round(average_fouls_in_season, 2)
+        # returns the average value to two decimal places
         return average_fouls_rounded
+    # cataches error with lists being empty, not initialised
     except ZeroDivisionError:
+        # prints error to console
         print("total games list is empty, cannot divide by zero")
 
 
@@ -229,15 +286,22 @@ def get_median_fouls_per_game(total_fouls):
         median_value (int): the integer value of the value which
         appears as the middle value in the list
     """
+    # declares a variable equal to the list passed sorted
     sorted_list_fouls_per_game = sorted(total_fouls)
+    # finds the middle value in the sorted list
     middle_value = int(len(sorted_list_fouls_per_game) / 2)
+    # if the list has an odd amount of values
     if len(sorted_list_fouls_per_game) % 2 == 1:
+        # median is the middle value in the sorted list
         median_value = sorted_list_fouls_per_game[middle_value]
     else:
+        # median value is equal to the middle value + the middle value
+        # minus one divided by 2
         median_value = (
             (sorted_list_fouls_per_game[middle_value - 1] +
              sorted_list_fouls_per_game[middle_value]) / 2)
 
+    # returns the median value
     return median_value
 
 
@@ -254,11 +318,18 @@ def get_mode_fouls_per_game(total_fouls):
         mode_value (int): the integer value of the value which
         appears most often in the data
     """
+    # find the unique values in list using set and sorting them in order.
     unique_values = sorted(set(total_fouls))
+    # list comprehension to count the amount of times a
+    # unique value appears in the list.
     times_in_list = [total_fouls.count(value) for value in unique_values]
+    # finds the max value in the list
     max_value = max(times_in_list)
+    # finds the index of the max value
     index_of_max = times_in_list.index(max_value)
+    # gets the mode using the index of the list
     mode_value = unique_values[index_of_max]
+    # returns the mode
     return mode_value
 
 
