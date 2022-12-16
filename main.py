@@ -34,109 +34,129 @@ def print_statements():
     """
     This function prints all the requirements for the project to the console
     """
-    try:
-        # printing average fouls to console
-        print(
-            f"The average number of fouls per game for the 2021/22 season "
-            f"was {average_fouls} fouls")
-    except NameError:
-        print("average fouls is not defined.")
-    try:
-        # printing median fouls to console
-        print(
-            f"The median number of fouls per game over the course of the "
-            f"21/22 season is: {median_fouls:.1f}")
-    except NameError:
-        print("median fouls is not defined.")
-    try:
-        # printing the mode number of fouls to console
-        print(
-            f"The mode number of fouls per game over the course of the 21/22 "
-            f"season is: {mode_fouls}")
-    except NameError:
-        print("mode_fouls is not defined.")
-    try:
-        # printing the max fouls in a game to console
-        print(
-            f"The maximum number of fouls in a game over the course of the "
-            f"21/22 season was: {max_fouls}")
-    except NameError:
-        print("max_fouls is not defined.")
-    try:
-        # printing the minimum fouls in a game to console
-        print(
-            f"The minimum number of fouls in a game over the course of the "
-            f"21/22 season was: {min_fouls}")
-    except NameError:
-        print("min_fouls is not defined.")
-    try:
-        # printing the range of fouls in a game to console
-        print(
-            f"The range of fouls in a game over the course of the 21/22 "
-            f"season was: {range_of_fouls}")
-    except NameError:
-        print("range_of_fouls is not defined.")
-    try:
-        # printing the interquartile range of fouls in a game to console
-        print(
-            f"The interquartile range of fouls in a game over the course of "
-            f"the 21/22 season was: {interquartile_range}")
-    except NameError:
-        print("interquartile_range is not defined.")
-    try:
-        # printing the standard deviation fouls in a game to console
-        print(
-            f"The standard deviation of fouls in a game over the course of "
-            f"the 21/22 season was: {standard_dev:.2f}")
-    except NameError:
-        print("standard_dev is not defined.")
-    try:
-        # printing the pearson mode skew of fould in a game to console
-        print(
-            f"The Pearson Mode Skewness of fouls in a game over the course of "
-            f"the 21/22 season was: {pearson_mode:.2f}")
-    except NameError:
-        print("pearson_mode is not defined.")
-    try:
-        # printing the alternative pearson mode skew of fouls in a game
-        # to console
-        print(
-            f"The Alternative Pearson Mode Skewness of fouls in a game over "
-            f"the course of the 21/22 season was: {alternative_pearson:.2f}")
-    except NameError:
-        print("alternative_pearson is not defined.")
-    try:
-        # printing the correlation of home fouls to away fouls in 21/22 season
-        print(f"The correlation between the data is {correlation:.2f}")
-    except NameError:
-        print("correlation is not defined.")
-    try:
-        # printing the distinct number of regeree sub categories
-        print(f"The distinct number of referees is: {sub_categories}")
-    except NameError:
-        print("sub_categories is not defined.")
-    try:
-        # printing the referee who gave the most fouls in 21/22
-        print(ref_with_most_fouls)
-    except NameError:
-        print("ref_with_most_fouls is not defined.")
-    try:
-        # printing the referee who gave the least fouls in 21/22
-        print(ref_with_least_fouls)
-    except NameError:
-        print("ref_with_least_fouls is not defined.")
-    try:
-        # printing the referee who gave the highest average of fouls
-        # per game in which they officiated in 21/22
-        print(highest_avg_fouls_per_game)
-    except NameError:
-        print("highest_avg_fouls_per_game is not defined.")
-    try:
-        # printing the referee who gave the lowest average of fouls
-        # per game in which they officiated in 21/22
-        print(lowest_avg_fouls_per_game)
-    except NameError:
-        print("lowest_avg_fouls_per_game is not defined.")
+    # user menu loop starting point
+    while True:
+        # user prompted to choose to examine home, away or both sets of fouls
+        # or to quit the program
+        user_input = input(("Press [H] to examine home fouls"
+                            ", Press [A] to examine away fouls"
+                            ", Press [B] to examine both"
+                            ", or press [Q] to quit"))
+        if user_input.lower().startswith("q"):
+            break
+        elif user_input.lower().startswith("h"):
+            break
+        elif user_input.lower().startswith("a"):
+            break
+        elif user_input.lower().startswith("b"):
+            try:
+                # printing average fouls to console
+                print(
+                    f"The average number of fouls per game for the 2021/22 "
+                    f"season was {average_fouls} fouls")
+            except NameError:
+                print("average fouls is not defined.")
+            try:
+                # printing median fouls to console
+                print(
+                    f"The median number of fouls per game over the course of "
+                    f"the 21/22 season is: {median_fouls:.1f}")
+            except NameError:
+                print("median fouls is not defined.")
+            try:
+                # printing the mode number of fouls to console
+                print(
+                    f"The mode number of fouls per game over the course of "
+                    f"the 21/22 season is: {mode_fouls}")
+            except NameError:
+                print("mode_fouls is not defined.")
+            try:
+                # printing the max fouls in a game to console
+                print(
+                    f"The maximum number of fouls in a game over the course "
+                    f"of the 21/22 season was: {max_fouls}")
+            except NameError:
+                print("max_fouls is not defined.")
+            try:
+                # printing the minimum fouls in a game to console
+                print(
+                    f"The minimum number of fouls in a game over the course "
+                    f"of the 21/22 season was: {min_fouls}")
+            except NameError:
+                print("min_fouls is not defined.")
+            try:
+                # printing the range of fouls in a game to console
+                print(
+                    f"The range of fouls in a game over the course of the "
+                    f"21/22 season was: {range_of_fouls}")
+            except NameError:
+                print("range_of_fouls is not defined.")
+            try:
+                # printing the interquartile range of fouls in a game
+                # to console
+                print(
+                    f"The interquartile range of fouls in a game over the "
+                    f"course of the 21/22 season was: {interquartile_range}")
+            except NameError:
+                print("interquartile_range is not defined.")
+            try:
+                # printing the standard deviation fouls in a game to console
+                print(
+                    f"The standard deviation of fouls in a game over the "
+                    f"course of the 21/22 season was: {standard_dev:.2f}")
+            except NameError:
+                print("standard_dev is not defined.")
+            try:
+                # printing the pearson mode skew of fould in a game to console
+                print(
+                    f"The Pearson Mode Skewness of fouls in a game over the "
+                    f"course of the 21/22 season was: {pearson_mode:.2f}")
+            except NameError:
+                print("pearson_mode is not defined.")
+            try:
+                # printing the alternative pearson mode skew of fouls in a game
+                # to console
+                print(
+                    f"The Alternative Pearson Mode Skewness of fouls in a game"
+                    f" over the course of the 21/22 season was: "
+                    f"{alternative_pearson:.2f}")
+            except NameError:
+                print("alternative_pearson is not defined.")
+            try:
+                # printing the correlation of home fouls to away fouls in
+                # 21/22 season
+                print(f"The correlation between the data is {correlation:.2f}")
+            except NameError:
+                print("correlation is not defined.")
+            try:
+                # printing the distinct number of regeree sub categories
+                print(f"The distinct number of referees is: {sub_categories}")
+            except NameError:
+                print("sub_categories is not defined.")
+            try:
+                # printing the referee who gave the most fouls in 21/22
+                print(ref_with_most_fouls)
+            except NameError:
+                print("ref_with_most_fouls is not defined.")
+            try:
+                # printing the referee who gave the least fouls in 21/22
+                print(ref_with_least_fouls)
+            except NameError:
+                print("ref_with_least_fouls is not defined.")
+            try:
+                # printing the referee who gave the highest average of fouls
+                # per game in which they officiated in 21/22
+                print(highest_avg_fouls_per_game)
+            except NameError:
+                print("highest_avg_fouls_per_game is not defined.")
+            try:
+                # printing the referee who gave the lowest average of fouls
+                # per game in which they officiated in 21/22
+                print(lowest_avg_fouls_per_game)
+            except NameError:
+                print("lowest_avg_fouls_per_game is not defined.")
+        else:
+            print(f"{user_input[0]} is incorrect, please pick again.")
 
 
 if __name__ == "__main__":
