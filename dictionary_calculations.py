@@ -1,3 +1,7 @@
+# Student ID: A00204916
+"""
+This file is used to do the calculations on the categorical data
+"""
 total_referees_data = {}
 num_of_games_reffed = {}
 ref_with_avg_value = {}

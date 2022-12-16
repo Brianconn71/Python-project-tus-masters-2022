@@ -1,3 +1,7 @@
+# Student ID: A00204916
+"""
+This file is used to do the visualisations of the categorical data
+"""
 from dictionary_visualisations import (
     pie_chart_from_data, box_plots_from_dict, bar_chart_from_data)
 from calculations import read_data_and_create_lists

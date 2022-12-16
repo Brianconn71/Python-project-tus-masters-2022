@@ -1,3 +1,7 @@
+# Student ID: A00204916
+"""
+This file is used to test the main.py file
+"""
 from main import (
     print_statements
 )

@@ -1,3 +1,7 @@
+# Student ID: A00204916
+"""
+This file is used to test the visualisations.py in the file
+"""
 from visualisations import (
     histogram_from_data, scatter_plot_from_data,
     box_plots_from_data

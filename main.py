@@ -1,3 +1,8 @@
+# Student ID: A00204916
+"""
+This file is used as the brain of the project,
+it runs the entire program
+"""
 # importing functions from all other files
 from calculations import (
     read_data_and_create_lists, get_average_fouls_per_game,

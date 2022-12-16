@@ -1,3 +1,7 @@
+# Student ID: A00204916
+"""
+This file is used to test the calculations on the categorical data
+"""
 from dictionary_calculations import (
     get_dict_of_refs_and_occurances_in_data,
     get_total_refs_data, distinct_sub_categories,

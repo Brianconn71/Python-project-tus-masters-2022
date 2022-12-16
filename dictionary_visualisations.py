@@ -1,3 +1,7 @@
+# Student ID: A00204916
+"""
+This file is used to do the visualisations on the categorical data
+"""
 import matplotlib.pyplot as plt
 
 

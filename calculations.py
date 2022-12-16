@@ -1,3 +1,7 @@
+# Student ID: A00204916
+"""
+This file is used define the functions used in the project
+"""
 # initializing the lists globally for use with entire file.
 referees = []
 full_time_home_goals = []

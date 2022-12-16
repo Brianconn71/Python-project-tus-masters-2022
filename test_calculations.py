@@ -1,3 +1,7 @@
+# Student ID: A00204916
+"""
+This file is used to test the calculations.py file
+"""
 from calculations import (
     get_number_of_games_in_season, get_total_fouls_per_game_in_season,
     get_average_fouls_per_game, get_median_fouls_per_game,
