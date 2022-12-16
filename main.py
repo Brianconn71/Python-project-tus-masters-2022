@@ -13,6 +13,7 @@ from calculations import (
     get_pearson_mode_skewness_of_fouls,
     get_alternative_pearson_mode_skewness_of_fouls,
     get_covariance_between_datasets, get_correlation_of_fouls,
+    get_total_fouls_per_list,
     home_fouls, away_fouls, referees)
 from dictionary_calculations import (
     get_dict_of_refs_and_occurances_in_data, get_total_refs_data,
@@ -45,9 +46,71 @@ def print_statements():
         if user_input.lower().startswith("q"):
             break
         elif user_input.lower().startswith("h"):
-            break
+            total_home_fouls = get_total_fouls_per_list(home_fouls)
+            print(f"The total number of Home fouls for the 2021/22 "
+                  f"season was {total_home_fouls} fouls")
+            median_fouls = get_median_fouls_per_game(home_fouls)
+            print(f"The total number of Home fouls for the 2021/22 "
+                  f"season was {median_fouls} fouls")
+            # gets the mode number of fouls per game in season from
+            # get_mode_fouls_per_game function in calculations.py
+            mode_fouls = get_mode_fouls_per_game(home_fouls)
+            # gets the max number of fouls per game in season from
+            # get_maximum_fouls_in_a_game function in calculations.py
+            max_fouls = get_maximum_fouls_in_a_game(home_fouls)
+            # gets the meinimum number of fouls per game in season from
+            # get_minimum_fouls_in_a_game function in calculations.py
+            min_fouls = get_minimum_fouls_in_a_game(home_fouls)
+            # gets the range of fouls per game in season from
+            # get_range_of_fouls function in calculations.py
+            range_of_fouls = get_range_of_fouls(max_fouls, min_fouls)
+            # gets the interquartile range of fouls per game in season from
+            # get_interquartile_range_of_fouls function in calculations.py
+            interquartile_range = get_interquartile_range_of_fouls(
+                home_fouls)
+            # gets the standard deviation of fouls per game in season from
+            # get_standard_deviation_of_fouls function in calculations.py
+            standard_dev = get_standard_deviation_of_fouls(home_fouls)
+            # gets the pearson mode skew of fouls per game in season from
+            # get_pearson_mode_skewness_of_fouls function in calculations.py
+            pearson_mode = get_pearson_mode_skewness_of_fouls(home_fouls)
+            # gets the alternative pearson mode skew of fouls per game in season from
+            # get_alternative_pearson_mode_skewness_of_fouls function in calculations
+            alternative_pearson = get_alternative_pearson_mode_skewness_of_fouls(
+                home_fouls)
         elif user_input.lower().startswith("a"):
-            break
+            total_away_fouls = get_total_fouls_per_list(away_fouls)
+            print(f"The total number of Home fouls for the 2021/22 "
+                  f"season was {total_away_fouls} fouls")
+            median_fouls = get_median_fouls_per_game(away_fouls)
+            print(f"The total number of Home fouls for the 2021/22 "
+                  f"season was {median_fouls} fouls")
+            # gets the mode number of fouls per game in season from
+            # get_mode_fouls_per_game function in calculations.py
+            mode_fouls = get_mode_fouls_per_game(away_fouls)
+            # gets the max number of fouls per game in season from
+            # get_maximum_fouls_in_a_game function in calculations.py
+            max_fouls = get_maximum_fouls_in_a_game(away_fouls)
+            # gets the meinimum number of fouls per game in season from
+            # get_minimum_fouls_in_a_game function in calculations.py
+            min_fouls = get_minimum_fouls_in_a_game(away_fouls)
+            # gets the range of fouls per game in season from
+            # get_range_of_fouls function in calculations.py
+            range_of_fouls = get_range_of_fouls(max_fouls, min_fouls)
+            # gets the interquartile range of fouls per game in season from
+            # get_interquartile_range_of_fouls function in calculations.py
+            interquartile_range = get_interquartile_range_of_fouls(
+                away_fouls)
+            # gets the standard deviation of fouls per game in season from
+            # get_standard_deviation_of_fouls function in calculations.py
+            standard_dev = get_standard_deviation_of_fouls(away_fouls)
+            # gets the pearson mode skew of fouls per game in season from
+            # get_pearson_mode_skewness_of_fouls function in calculations.py
+            pearson_mode = get_pearson_mode_skewness_of_fouls(away_fouls)
+            # gets the alternative pearson mode skew of fouls per game in season from
+            # get_alternative_pearson_mode_skewness_of_fouls function in calculations
+            alternative_pearson = get_alternative_pearson_mode_skewness_of_fouls(
+                away_fouls)
         elif user_input.lower().startswith("b"):
             try:
                 # printing average fouls to console
