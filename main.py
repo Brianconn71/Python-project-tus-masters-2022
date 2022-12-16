@@ -23,9 +23,8 @@ from dictionary_visualisations import (
     pie_chart_from_data, bar_chart_from_data,
     box_plots_from_dict)
 
+
 # function to print all statements to the console
-
-
 def print_statements():
     """
     This function prints all the requirements for the project to the console
@@ -147,7 +146,8 @@ if __name__ == "__main__":
     average_fouls = get_average_fouls_per_game(total_games)
     # gets the total fouls per game in season from
     # get_total_fouls_per_game_in_season function in calculations.py
-    total_fouls_per_game = get_total_fouls_per_game_in_season()
+    total_fouls_per_game = get_total_fouls_per_game_in_season(
+        home_fouls, away_fouls)
     # gets the median fouls per game in season from get_median_fouls_per_game
     # function in calculations.py
     median_fouls = get_median_fouls_per_game(total_fouls_per_game)

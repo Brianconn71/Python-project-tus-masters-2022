@@ -28,9 +28,9 @@ def test_get_number_of_games_in_season():
     of games in the season
     """
     # calls the get_number_of_games_in_season function
-    output = get_number_of_games_in_season()
+    output = get_number_of_games_in_season([1, 2, 3, 4, 5])
     # asserts the returned value is equal to the expected value.
-    assert output == 380
+    assert output == 5
 
 
 def test_get_total_fouls_per_game_in_season():
@@ -39,9 +39,10 @@ def test_get_total_fouls_per_game_in_season():
     of fouls per game in season.
     """
     # calls the get_total_fouls_per_game_in_season function
-    output = get_total_fouls_per_game_in_season()
+    output = get_total_fouls_per_game_in_season([1, 2, 3, 4, 5],
+                                                [1, 2, 3, 4, 5])
     # asserts the length of the list is equal to expected
-    assert len(output) == 380
+    assert len(output) == 5
     # asserts the data type is list.
     assert type(output) == list
 

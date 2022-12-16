@@ -165,13 +165,13 @@ def read_data_and_create_lists():
         print(f"{filename} does not exist")
 
 
-def get_number_of_games_in_season():
+def get_number_of_games_in_season(referees):
     """
     gets the total number of matches in the season.
 
-    I am using a function to get the length of the home_fouls list based on
+    I am using a function to get the length of the referees list based on
     the assumption that a match will always have at least one
-    home_foul per game
+    a referee
 
     Returns:
         games_in_season (int): the value indicating the total
@@ -179,7 +179,7 @@ def get_number_of_games_in_season():
     """
     # get the length of home fouls list as a means of getting total games
     # in the season as each game contains one or more home fouls
-    games_in_season = len(home_fouls)
+    games_in_season = len(referees)
     # calling the get average fouls function to use games_in_season as
     # an argument as it will be an int value of amount of games in the season
     get_average_fouls_per_game(games_in_season)
@@ -187,10 +187,14 @@ def get_number_of_games_in_season():
     return games_in_season
 
 
-def get_total_fouls_per_game_in_season():
+def get_total_fouls_per_game_in_season(home_fouls, away_fouls):
     """
     This function calculates the total fouls per game over the
     course of the season
+
+    Args:
+        home_fouls (list[int]): list of integers representing home fouls
+        away_fouls (list[int]): list of integers representing away fouls
 
     Returns:
         total_fouls_per_game_in_season (list[int]): list of the total
@@ -230,8 +234,7 @@ def get_average_fouls_per_game(total_games):
     This is then rounded to two decimal places
 
     Args:
-        total_games (list[int]): total games in season which was obtained
-        in the get_number_of_games_in_season function
+        total_games (list[int]): total games in season list of integers
 
     Returns:
         average_fouls_rounded (float): the float value of the average value
