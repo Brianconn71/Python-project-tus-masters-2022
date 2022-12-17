@@ -236,6 +236,13 @@ def get_total_fouls_per_list(fouls):
     return total_fouls
 
 
+def get_mean_fouls_per_game(fouls):
+    length_of_list = len(fouls)
+    sum_of_values = sum(fouls)
+    mean_value = sum_of_values / length_of_list
+    return mean_value
+
+
 def get_average_fouls_per_game(total_games):
     """
     Takes in the total games in a season and uses this as the divisor in the
@@ -381,7 +388,7 @@ def get_range_of_fouls(max_fouls, min_fouls):
     """
     # declare a variable to equal a string value equal
     # to the min and max value passed
-    range = f"{min_fouls}, {max_fouls}"
+    range = max_fouls - min_fouls
     # returns the string value
     return range
 
@@ -464,16 +471,16 @@ def get_standard_deviation_of_fouls(total_fouls_per_game):
     return standard_dev
 
 
-def get_pearson_mode_skewness_of_fouls(total_fouls_per_game):
+def get_mode_skewness_of_fouls(total_fouls_per_game):
     """
-    Get the pearson mode Skewness of the data
+    Get the mode mode Skewness of the data
 
     Args:
         total_fouls_per_game (list[int]): list of integers to
-        calculate pearson mode Skewness from
+        calculate mode mode Skewness from
 
     Returns:
-        pearson_skew: the pearson mode skewness of the data
+        mode_skew: the mode mode skewness of the data
     """
     # mean value formula sum of list values passed
     # divided by the length of the list
@@ -486,23 +493,23 @@ def get_pearson_mode_skewness_of_fouls(total_fouls_per_game):
     standard_dev = (
         round(get_standard_deviation_of_fouls(total_fouls_per_game), 2))
 
-    # pearson skew formula
-    pearson_skew = (mean - mode) / standard_dev
+    # mode skew formula
+    mode_skew = (mean - mode) / standard_dev
 
-    # returns the pearson skew
-    return pearson_skew
+    # returns the mode skew
+    return mode_skew
 
 
-def get_alternative_pearson_mode_skewness_of_fouls(total_fouls_per_game):
+def get_median_skewness_of_fouls(total_fouls_per_game):
     """
-    Get the alternative pearson mode skewness from the data
+    Get the median skewness skewness from the data
 
     Args:
         total_fouls_per_game (list[int]): list of integers to calculate
-        alternative pearson mode from
+        median skewness from
 
     Returns:
-        alternative_pearson_skew: the alternative pearson mode
+        median_skew: the median skewness
         skewness from the data
     """
     # mean value formula sum of list values passed
@@ -515,11 +522,11 @@ def get_alternative_pearson_mode_skewness_of_fouls(total_fouls_per_game):
     # above and rounded to two decimal places
     standard_dev = get_standard_deviation_of_fouls(total_fouls_per_game)
 
-    # alternative pearson skew formula
-    alternative_pearson_skew = (3 * (mean - mode)) / standard_dev
+    # median skew formula
+    median_skew = (3 * (mean - mode)) / standard_dev
 
-    # returns the alternative pearson skew
-    return alternative_pearson_skew
+    # returns the median skew
+    return median_skew
 
 
 def get_covariance_between_datasets(home_fouls, away_fouls):

@@ -8,8 +8,8 @@ from calculations import (
     get_mode_fouls_per_game, get_maximum_fouls_in_a_game,
     get_minimum_fouls_in_a_game, get_range_of_fouls,
     get_interquartile_range_of_fouls, get_standard_deviation_of_fouls,
-    get_pearson_mode_skewness_of_fouls,
-    get_alternative_pearson_mode_skewness_of_fouls,
+    get_mode_skewness_of_fouls,
+    get_median_skewness_of_fouls,
     get_covariance_between_datasets, get_correlation_of_fouls,
     read_data_and_create_lists)
 import pytest
@@ -141,27 +141,27 @@ def test_get_standard_deviation_of_fouls():
     assert output == pytest.approx(14, 0.1)
 
 
-def test_get_pearson_mode_skewness_of_fouls():
+def test_get_mode_skewness_of_fouls():
     """
-    tests get_pearson_mode_skewness_of_fouls returns the correct value
+    tests get_mode_skewness_of_fouls returns the correct value
     for the mode of the list passed.
     """
-    # calls the get_pearson_mode_skewness_of_fouls function with
+    # calls the get_mode_skewness_of_fouls function with
     # a list of integers
-    output = get_pearson_mode_skewness_of_fouls([19, 20, 20, 40, 50])
+    output = get_mode_skewness_of_fouls([19, 20, 20, 40, 50])
     # asserts the returned value is equal to expected value
     assert output == pytest.approx(0.6, 0.2)
 
 
-def test_get_alternative_pearson_mode_skewness_of_fouls():
+def test_get_median_skewness_of_fouls():
     """
-    tests get_alternative_pearson_mode_skewness_of_fouls returns the
+    tests get_median_skewness_of_fouls returns the
     correct value for the mode of the list passed.
     """
-    # calls the get_alternative_pearson_mode_skewness_of_fouls function with
+    # calls the get_median_skewness_of_fouls function with
     # a list of integers
     output = (
-        get_alternative_pearson_mode_skewness_of_fouls([19, 20, 20, 40, 50]))
+        get_median_skewness_of_fouls([19, 20, 20, 40, 50]))
     # asserts the returned value is equal to expected value
     assert output == pytest.approx(2, 0.1)
 
