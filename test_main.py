@@ -20,4 +20,4 @@ def test_print_statements():
 
 
 if __name__ == "__main__":
-    pytest.main([__file__, "-vv"])
+    pytest.main([__file__, "-s"])

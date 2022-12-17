@@ -114,7 +114,7 @@ def test_get_range_of_fouls():
     # calls the get_range_of_fouls function with a list of integers
     output = get_range_of_fouls(5, 3)
     # asserts the returned value is equal to expected value
-    assert output == "3, 5"
+    assert output == 2
 
 
 def test_get_interquartile_range_of_fouls():

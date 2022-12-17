@@ -230,16 +230,40 @@ def get_total_fouls_per_game_in_season(home_fouls, away_fouls):
 
 
 def get_total_fouls_per_list(fouls):
+    """
+    This function calculates the total fouls per game over the
+    course of the season
+
+    Args:
+        fouls (list[int]): list of integers representing fouls
+
+    Returns:
+        total_fouls (int): total value of fouls in the list
+    """
     # initialize empty list
     total_fouls = sum(fouls)
-    # returns the list of total fouls per game
+    # returns the total value for fouls in the list
     return total_fouls
 
 
 def get_mean_fouls_per_game(fouls):
+    """
+    This function calculates the mean value of the list passed to it.
+
+    Args:
+        fouls (list[int]): list of integers representing fouls
+
+    Returns:
+        mean_value (int): mean value from the list of integers passed
+    """
+    # get the length of the list passed
     length_of_list = len(fouls)
+    # get the sum of the values of the list passed
     sum_of_values = sum(fouls)
+    # declare mean value and make it equal
+    # the sum of the list divided by the length of the list
     mean_value = sum_of_values / length_of_list
+    # returns the mean value
     return mean_value
 
 
