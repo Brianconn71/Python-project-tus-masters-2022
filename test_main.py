@@ -3,7 +3,7 @@
 This file is used to test the main.py file
 """
 from main import (
-    print_statements, correlation_and_dictionary
+    print_statements, dictionary_data
 )
 import pytest
 
@@ -19,14 +19,14 @@ def test_print_statements():
     assert True
 
 
-def test_correlation_and_dictionary():
+def test_dictionary_data():
     """
-    tests correlation_and_dictionary prints the correct
+    tests dictionary_data prints the correct
     data to the console and analyses correlation between
     two lists and the dictionary data
     """
     # calls the print_startements function
-    correlation_and_dictionary()
+    dictionary_data()
     # asserts the returned value is equal to the expected value.
     assert True
 

@@ -352,16 +352,68 @@ def print_statements():
             # if user input is q then loop breaks
             elif get_median_skew.lower().startswith("q"):
                 break
+        # asks the users for input to get correlation value
+        get_correlation = input("Get the correlation between home"
+                                " and away fouls? [Y}es or [Q]uit?")
+        # if input is y then get the correlation value
+        if get_correlation.lower().startswith("y"):
+            # gets the correlation of fouls between home and away teams
+            # in season from
+            # get_correlation_of_fouls function in calculations.py
+            correlation = get_correlation_of_fouls(home_fouls, away_fouls)
+            # printing the correlation of home fouls to away fouls in
+            # 21/22 season
+            print(f"The correlation between the data is {correlation:.2f}")
+        # if user input is q then loop breaks
+        elif get_correlation.lower().startswith("q"):
+            break
+        # asks the users for input to get a histogram chart
+        get_histogram = input("Get the histogram showing home"
+                              " and away fouls? [Y}es or [Q]uit?")
+        # if input is y then get a histogram chart
+        if get_histogram.lower().startswith("y"):
+            # calling the histogram_from_data from visualisations.py to
+            # create a histogram from home and away fouls and
+            # place diagram in charts folder
+            histogram_from_data(home_fouls, away_fouls)
+        # if user input is q then loop breaks
+        elif get_histogram.lower().startswith("q"):
+            break
+        # asks the users for input to get a box plot chart
+        get_box_plots = input("Get the boxplots showing home"
+                              " and away fouls? [Y}es or [Q]uit?")
+        # if input is y then get a box plot chart
+        if get_box_plots.lower().startswith("y"):
+            # calling the box_plots_from_data from visualisations.py to
+            # create a box plot from home and away fouls and
+            # place diagram in charts folder
+            box_plots_from_data(home_fouls, away_fouls)
+        # if user input is q then loop breaks
+        elif get_box_plots.lower().startswith("q"):
+            break
+        # asks the users for input to get a scatter plot chart
+        get_scatter_plot = input("Get the scatter plot showing home"
+                                 " and away fouls? [Y}es or [Q]uit?")
+        # if input is y then get a scatter plot chart
+        if get_scatter_plot.lower().startswith("y"):
+            # calling the scatter_plot_from_data from visualisations.py to
+            # create a scatter plot from home and away fouls and
+            # place diagram in charts folder
+            scatter_plot_from_data(home_fouls, away_fouls)
+        # if user input is q then loop breaks
+        elif get_scatter_plot.lower().startswith("q"):
+            break
+            # asks the users for input to get categrical data
         # if user selects anything else then message displays an error.
         else:
             print(f"{user_input[0]} is incorrect, please pick again.")
 
 
-def correlation_and_dictionary():
+def dictionary_data():
     while True:
-        # user prompted to choose to examine Correlation and Dictionary data
+        # user prompted to choose to examine Dictionary data
         # or to quit the program
-        user_input = input(("Press [Y] to examine Correlation and Dictionary"
+        user_input = input(("Press [Y] to examine Dictionary Data"
                             " data, or press [Q] to quit"))
         # if user input is q then loop breaks
         if user_input.lower().startswith("q"):
@@ -369,58 +421,6 @@ def correlation_and_dictionary():
             break
         # if user input is y then analsyse data
         elif user_input.lower().startswith("y"):
-            # asks the users for input to get correlation value
-            get_correlation = input("Get the correlation between home"
-                                    " and away fouls? [Y}es or [Q]uit?")
-            # if input is y then get the correlation value
-            if get_correlation.lower().startswith("y"):
-                # gets the correlation of fouls between home and away teams
-                # in season from
-                # get_correlation_of_fouls function in calculations.py
-                correlation = get_correlation_of_fouls(home_fouls, away_fouls)
-                # printing the correlation of home fouls to away fouls in
-                # 21/22 season
-                print(f"The correlation between the data is {correlation:.2f}")
-            # if user input is q then loop breaks
-            elif get_correlation.lower().startswith("q"):
-                break
-            # asks the users for input to get a histogram chart
-            get_histogram = input("Get the histogram showing home"
-                                  " and away fouls? [Y}es or [Q]uit?")
-            # if input is y then get a histogram chart
-            if get_histogram.lower().startswith("y"):
-                # calling the histogram_from_data from visualisations.py to
-                # create a histogram from home and away fouls and
-                # place diagram in charts folder
-                histogram_from_data(home_fouls, away_fouls)
-            # if user input is q then loop breaks
-            elif get_histogram.lower().startswith("q"):
-                break
-            # asks the users for input to get a box plot chart
-            get_box_plots = input("Get the boxplots showing home"
-                                  " and away fouls? [Y}es or [Q]uit?")
-            # if input is y then get a box plot chart
-            if get_box_plots.lower().startswith("y"):
-                # calling the box_plots_from_data from visualisations.py to
-                # create a box plot from home and away fouls and
-                # place diagram in charts folder
-                box_plots_from_data(home_fouls, away_fouls)
-            # if user input is q then loop breaks
-            elif get_box_plots.lower().startswith("q"):
-                break
-            # asks the users for input to get a scatter plot chart
-            get_scatter_plot = input("Get the scatter plot showing home"
-                                     " and away fouls? [Y}es or [Q]uit?")
-            # if input is y then get a scatter plot chart
-            if get_scatter_plot.lower().startswith("y"):
-                # calling the scatter_plot_from_data from visualisations.py to
-                # create a scatter plot from home and away fouls and
-                # place diagram in charts folder
-                scatter_plot_from_data(home_fouls, away_fouls)
-            # if user input is q then loop breaks
-            elif get_scatter_plot.lower().startswith("q"):
-                break
-            # asks the users for input to get categrical data
             get_dictionary_data = input("Get the categorical data "
                                         "based on referees? [Y}es or [Q]uit?")
             # if input is y then get categorical data
@@ -593,7 +593,7 @@ if __name__ == "__main__":
     # calling the print_statements function above to
     # print statements to the console
     print_statements()
-    # calling the correlation_and_dictionary function above to
+    # calling the dictionary_data function above to
     # get user input on wheteher or not they wish to
     # get the analysis of correclation and dictionary data
-    correlation_and_dictionary()
+    dictionary_data()
